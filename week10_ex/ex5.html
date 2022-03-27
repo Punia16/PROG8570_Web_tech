@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While</title>
+    <script>
+        // print the sum of even number from 1 to 10
+        // 2 + 4..... + 10 = ?
+        var total = 0; // store the sum 
+        var myOutput = ''; // store my output
+        var i = 0;
+        while( i < 10 ) // a loop for 10 numbers
+        {
+            i++; // 1 to 10
+            // check if i is odd and then skip it
+            if(i % 2 == 1) // 10 / 2 = 5 and the remainder is 0; 9/2 = 4 and the remainder is 1
+            {
+                continue; // skip all the next lines in the loop
+            }
+            if(i == 10){ // check for the last number to add an = after it
+                myOutput += `${i} = `; // 10 = 
+            }
+            else{
+                myOutput += `${i} + `; // 1 + and so on
+            }
+            total += i; // total = total + i
+            
+        }
+        myOutput += total; // concatenate not add
+        document.write(myOutput);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

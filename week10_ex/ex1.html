@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+    <script>
+        // Functions
+        // Subtract two numbers
+        function subNum() // declaration // no return type needed
+        { // definition
+            let a = prompt('Enter the first number:'); // input is treated as a string
+            // ideally you should validate input before converting
+            a = parseInt(a); // convert to a number
+            let b = prompt('Enter the second number');
+            b = parseInt(b); // convert to a number 
+            let c = a - b;
+            alert(`The difference is ${c}`);
+            // return is optional
+            // tell whether the difference is positive or negative
+            // == matches only values but === matches value and datatype
+            if(c === 0){ // compare c to 0 but c = 0 will assign 0 to c
+                alert('The difference is zero');
+            }
+            else if(c > 0){
+                    alert('The difference is positive number');
+                    //alert('Just for fun!');
+                }
+            else{
+                alert('The difference is negative number');
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <button onclick="subNum()">Sub</button>
+</body>
+</html>

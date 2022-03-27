@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>Temperature Converter</title>
+ </head>
+
+ <body>
+  <div class="container">
+   <header>
+    <h1>Temperature Converter</h1>
+   </header>
+   <main>
+    <section>
+     <div class="input-group-wrapper">
+      <label for="celsius" class="input-wrapper">
+       Celsius
+       <input type="number" name="celsius" class="celsius-input" oninput="celsiusToFahrenheit()">
+      </label>
+
+      <label for="fahrenheit" class="input-wrapper">
+       Fahrenheit
+       <input type="number" name="fahrenheit" class="fahrenheit-input" oninput="fahrenheitToCelsius()">
+      </label>
+     </div>
+
+     <p class="helper-text">Should I wear a sweater today?</p>
+     <button onclick="shouldWearSweater()">Find out</button>
+    </section>
+
+   </main>
+  </div>
+  <p class="output-text"></p>
+
+ </body>
+ <script src="./script.js"></script>
+
+</html>

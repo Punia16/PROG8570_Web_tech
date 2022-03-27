@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS arrays</title>
+    <script>
+        let a = [10,20,30]; // basic numeric array
+        document.write('Array = ' + a);
+        document.write('<br>');
+
+        a = [10,20,30,40]; // change the size of a dynamically
+        document.write('Updated array = ' + a);
+        document.write('<br>');
+
+        a = [10,20,30,'hi']; // 'a' is now mixed array of numbers and strings 
+        document.write('Mixed array = ' + a);
+        document.write('<br>');
+
+        document.write(a[3]);
+        document.write('<br>');
+
+        a['hi'] = 500; // arrays in JS can have string indexes
+        document.write(a['hi']); 
+        document.write('<br>');
+
+        a[4] = 50; // the string index 'hi' does not get automatically assigned a numeric index. The numeric index 4 is different.
+        document.write(a[4]);
+        document.write('<br>');
+
+        document.write('Array after string indexes = ' + a); // does not print string indexes
+        document.write('<br>');
+        document.write('<br>');
+
+        document.write('Trying to print the array using a loop <br>');
+        // does not print string indexes
+        for(let element of a)
+        {
+            document.write(element);
+            document.write('<br>');
+        }
+
+        document.write('Checking length of the array = ');
+        document.write(a.length); // length of a also does not count string indexes
+        document.write('<br>');
+
+        // you can print string indexes using dot notation
+        document.write(a.hi); // since a is an array object
+        document.write('<br>');
+        document.write('<br>');
+        
+        // getting all the elements of 'a'
+        let b = Object.keys(a); // returns an array with all the indexes in 'a'
+        // print all the keys of a
+        document.write('All indexes of a = ' + b);
+        document.write('<br>');
+
+        for(let i of b)
+        {
+            document.write('a['+i+'] = ' + a[i]);
+            document.write('<br>');
+            a[i] = 1; // changes will stick
+        }
+        document.write(a);
+        document.write('<br>');
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

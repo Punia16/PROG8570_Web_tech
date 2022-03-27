@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays in JS</title>
+    <script>
+        let myArray = Array(); // creating an empty array
+        let anotherArray = []; // another empty array
+        
+        let a = [10,20,30]; // basic numeric array
+        let sizeOfA = a.length; // find the size of array 'a'
+
+        document.write(sizeOfA);
+        document.write('<br>');
+
+        let sum = 0;
+        // for....of loop
+        for(let element of a)
+        {
+            document.write(element);
+            document.write('<br>');
+            sum += element;
+            element = 1; // does not change the actual array elements
+        }
+        document.write('<br>');
+        document.write(sum);
+        document.write('<br>');
+        document.write(b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

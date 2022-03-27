@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days of week</title>
+    <script>
+        function daysOfWeek()
+        {
+            var dayInput = prompt('Please enter a number 1-7:');
+            dayInput = parseInt(dayInput);
+            if(dayInput === 1){
+                alert('It is Monday :(');
+            }
+            else if(dayInput === 2){
+                alert('It is Tuesday :(');
+            }
+            else if(dayInput === 3){
+                alert('It is Wednesday :)');
+            }
+            else if(dayInput === 4){
+                alert('It is Thursday :|');
+            }
+            else if(dayInput === 5){
+                alert('It is Friday x:)');
+            }
+            else if(dayInput === 6){
+                alert('It is Saturday ;)');
+            }
+            else if(dayInput === 7){
+                alert('It is Sunday :)');
+            }
+            else{
+                alert('Not a valid input');
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="daysOfWeek()">Click here!</button>
+</body>
+</html>

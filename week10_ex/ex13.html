@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array - Reference type</title>
+    <script>
+        var myArray = ["Iron man", "Hulk", "Captain America", "Hawkeye", "Black Widow", "Doctor Strange", "Woman Woman"];
+        document.write('Super heroes array = ');
+        document.write(myArray);
+        document.write('<br>');
+
+        // writing a function to replace the first element in the array
+        function changeElement(someArray){
+           // someArray = someArray.slice(); // create a new array if you do not want to edit the original array
+            someArray[0] = 'Batman';
+            document.write('Updated superheroes array = ');
+            document.write(someArray);
+            document.write('<br>');
+        }
+
+        changeElement(myArray);
+        document.write('Printing superheroes array again = ');
+        document.write(myArray); // myArray gets changed as well as it is a reference type element.
+        document.write('<br>');
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

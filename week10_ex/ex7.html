@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add 2 numbers</title>
+    <style>
+        body{
+            width: 400px; /* set the content on the page to 400px width */
+            margin: 20px auto; /* auto centers the content from left and right */
+            padding: 20px; /* add some gap between the border and the content */
+            border: 2px solid black; /* add a border */
+        }
+        table{
+            border: 1px solid black; /* add a border */
+            margin-top: 20px; /* add some space to push the table away from buttons on top */
+            border-collapse: collapse; /* merge the table and cell borders */
+            width: 200px; /* give a width to the table */
+        }
+        td{
+            border: 1px solid black; /* add a border */
+            padding: 10px; /* add some space inside the cells  */
+            text-align: right; /* align the text in the cell to the right edge */
+        }
+    </style>
+    <script src="custom.js"></script> <!-- link external JS file -->
+</head>
+<body>
+    <main>
+        <h1>Let us add some numbers!</h1>
+        <button onclick="enterA()">Enter A</button>
+        <button onclick="enterB()">Enter B</button>
+        <span id="sumButton"></span>
+        <table>
+            <tr>
+                <td>A</td>
+                <td id="valA"></td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td id="valB"></td>
+            </tr>
+            <tr>
+                <td>Sum</td>
+                <td id="valSum"></td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

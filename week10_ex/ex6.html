@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <script>
+        function addNum()
+        {
+            var a = prompt('Enter a:');
+            // isNaN(a) - Returns true if a is not a number
+            while(isNaN(a)) // if true, then we know a is string and not number
+            {
+                //alert('You entered' + a + 'which is not a number.');
+                a = prompt('Please enter numbers only, enter a:'); // ask the user again for input
+            }
+            a = parseInt(a); // convert string a into number a
+            var b = prompt('Enter b:');
+            // ideally we should validate here
+            // add validation for b here
+            b = parseInt(b);
+            var sum = a + b;
+            document.write(sum);
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="addNum()">Add</button>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For loop</title>
+    <script>
+        // print the sum of first 10 numbers
+        // 1 + 2 + 3..... + 10 = 55
+        var total = 0; // store the sum 
+        var myOutput = ''; // store my output
+        for(var i = 1; i <= 10; i++) // a loop for 10 numbers
+        {
+            total += i; // total = total + i
+            if(i == 10){ // check for the last number to add an = after it
+                myOutput += `${i} = `; // 10 = 
+            }
+            else{
+                myOutput += `${i} + `; // 1 + and so on
+            }
+        }
+        myOutput += total; // concatenate not add
+        document.write(myOutput);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
