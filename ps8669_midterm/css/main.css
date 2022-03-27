@@ -1,0 +1,148 @@
+:root {
+
+	--black: #030303;
+	--body-font-style: "monospace", "Gill Sans", sans-serif;
+	--white: white;
+
+
+}
+
+
+.body-section
+{
+	font-family: var(--body-font-style);
+	width: 1024px;
+	margin: auto;
+	background-image: url(../images/bg.jpg);
+	background-color: rgba(7, 7, 7, 0.5);
+	background-blend-mode: multiply ;
+	   
+}
+header {
+	text-align: center;
+}
+header h2 {
+	margin: 0;
+	font-size: 3rem;
+	color: black;
+	padding: 3rem 0;
+}
+
+nav {
+	padding: 0.75rem;
+	border-top: 1px dashed var(--black);
+	border-bottom: 1px dashed var(--black);
+   }
+   
+   ul {
+	display: flex;
+	justify-content: space-around;
+   }
+   
+   ul > li {
+	list-style-type: none;
+   }
+   
+   ul > li > a {
+	text-decoration: none;
+	color: var(--black);
+   }
+   
+   ul > li > a:hover {
+	text-decoration: underline;
+   }
+nav a:hover,
+nav a.active {
+   color: darkgray;
+}
+
+.image-block{
+	display: flex;
+	justify-content: space-between;
+	margin: 2rem;
+	padding: 2rem;
+}
+.image-block img {
+	width: 200px;
+	border: 1px solid var(--black);
+}
+.image-block img:nth-child(odd) {
+	border-radius: 10px;
+}
+.middle {
+	display: flex;
+	justify-content: space-around;
+	margin: 3rem 0;
+	color: var(--black);
+}
+.left-side{
+    position: relative; 
+    text-align: center; 
+	height: 400px;
+}
+.left-side img{
+	width: 500px;
+	height: 100%;
+}
+.image{
+	text-align: center;
+	position: relative;
+	height: 400px;
+	background: url(../images/traveling.jpg) rgba(0, 0, 0, 0.5);
+	background-blend-mode: multiply ;
+	border: 20px solid #010101;
+}
+.text{
+    position: absolute; 
+    top: 0;  
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    padding: 20px; 
+    color: var(--black); 
+    font-family: sans-serif; 
+    font-weight: bold; 
+}
+.right-side{
+	text-align: center;
+}
+.bottom-table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 2px solid var(--black);
+	margin-top: 2rem;
+	color: var(--black);
+	padding: 2rem;
+}
+table th,
+table td {
+	padding: 1rem;
+	border-bottom: 1px solid var(--black);
+	text-align: center;
+	border-right: 1px solid var(--black);
+}
+
+footer {
+	color: var(--black);
+	padding: 1rem;
+	text-align: center;
+	margin-top: 1rem;
+	font-weight: 700;
+	border-top: 1px solid rgb(12, 12, 12);
+}
+
+/* responsive code */
+@media screen and (max-width: 768px) {
+	header h1 {
+		font-size: 2rem;
+	}
+	header h2 {
+		font-size: 1.5rem;
+	}
+	main {
+		flex-direction: column;
+	}
+	nav {
+		flex-wrap: wrap;
+	}
+}

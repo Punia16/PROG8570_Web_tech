@@ -1,0 +1,112 @@
+/* initial css, you can put them into normalize.css */
+p {
+	margin: 0;
+}
+a {
+	text-decoration: none;
+}
+
+/* common css */
+body {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+:root {
+	--main-color: hotpink;
+	--article-color: black;
+	--a-default-clor: blue;
+	--a-hover-color: orange;
+	--a-active-color: red;
+	--white-color: white;
+	--body-fonts: "Helvetica", "Arial", sans-serif;
+}
+
+/* if you want to make your pages  responsive, change the css here*/
+@media screen and (max-width: 768px) {
+	body {
+		max-width: 700px;
+	}
+}
+
+/* css for header */
+header {
+	height: 2rem;
+	line-height: 2rem;
+	border: 1px solid black;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+}
+header img {
+	width: 2rem;
+	height: 2rem;
+}
+
+/* css for nav bar */
+nav {
+	border: 1px dashed blue;
+	padding: 1rem;
+	display: flex;
+	justify-items: start;
+}
+nav a {
+	display: inline-block;
+	margin-right: 1rem;
+}
+nav a:hover {
+	color: var(--a-hover-color);
+}
+nav a:visited {
+	color: var(--a-default-clor);
+}
+nav a.active {
+	color: var(--a-active-color);
+}
+
+/* css for main content */
+main {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid rebeccapurple;
+}
+aside {
+	padding: 1rem;
+	border: 1px dashed gray;
+}
+aside a {
+	color: var(--white-color);
+	width: 5rem;
+	height: 4rem;
+	line-height: 4rem;
+	text-align: center;
+	border: 1px dashed green;
+	display: block;
+	margin: 1rem 0;
+}
+aside a.active {
+	color: var(--a-active-color);
+}
+.home-thumb {
+	background-image: url(../images/img1.jpeg);
+}
+.merch-thumb {
+	background-image: url(../images/img2.jpeg);
+}
+.table-thumb {
+	background-image: url(../images/img3.jpeg);
+}
+
+.content-center {
+	border: 1px solid red;
+	padding: 1rem;
+}
+.content-right {
+	border: 1px dashed purple;
+	padding: 1rem;
+}
+/* css for footer */
+footer {
+	border: 1px solid black;
+	padding: 1rem;
+	text-align: center;
+}

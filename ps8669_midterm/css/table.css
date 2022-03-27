@@ -1,0 +1,63 @@
+:root {
+	--link-color:#f7e7d9;
+	--maroon:  #890417;
+	--light: rgb(219, 218, 218);
+	--body-font-style: "monospace", "Gill Sans", sans-serif;
+	--thumnail-maroon: #ac5757;
+	--blue-light: #ced4da;
+}
+header {
+	text-align: center;
+	position: relative;
+	height: 400px;
+	background: url(../images/actor.jpg) rgba(0, 0, 0, 0.5);
+	background-blend-mode: multiply ;
+	border: 20px solid #010101;
+}
+header h1.actortext {
+	color: transparent;
+	font-size: 5rem;
+	position: absolute; 
+    inset: 0;
+    padding: 20px;
+    color: #fbeeef; 
+    font-family: sans-serif; 
+    font-weight: bold; 
+}
+.awards-container {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid var(--light);
+	margin-top: 2rem;
+	margin-bottom: 5rem;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.table-heading{
+	text-decoration: underline;
+	background-color: var(--thumnail-maroon);
+}
+
+.side-table{
+	width: 100%;
+	border-collapse: separate;
+	border: 3px solid var(--light);
+	margin-top: 2rem;
+
+}
+.side-table-row{
+	border: 2px, solid white;
+	background-color: var(--light);
+}
+.awards-container th {
+	background-color: var(--thum-hover-color);
+	padding: 1rem;
+	border-bottom: 1px solid var(--light);
+	text-align: left;
+}
+.awards-container td {
+	padding: 1rem;
+	border-bottom: 1px solid var(--light);
+}
+.awards-container tbody tr:nth-child(even) {
+	background-color: var(--light);
+}
