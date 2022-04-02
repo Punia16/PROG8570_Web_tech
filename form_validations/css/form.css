@@ -1,0 +1,78 @@
+body{
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+main{
+    /* display: flex; */
+    /* grid-template-columns: 1fr 1fr; */
+}
+#errors{
+    color: rgb(161, 13, 13);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    line-height: 34px;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px;
+
+}
+form, .formData{
+    width: 580px;
+    border: 3px solid rgb(20, 20, 20);
+    box-shadow: 0 0 10px #2c2c2c;
+    padding: 30px;
+    margin: 50px auto;
+    color: rgb(14, 13, 13);
+    background-color: #a4ecf5;
+    border-radius: 20px;
+}
+
+.form2{
+    width: 380px;
+    border: 3px solid rgb(24, 23, 23);
+    box-shadow: 0 0 10px #2c2c2c;
+    padding: 30px;
+    margin: 50px auto;
+    color: rgb(22, 21, 21);
+    background-color: #5d6664;
+    border-radius: 20px;
+
+}
+label{
+    width: 170px;
+    display: inline-block;
+    float: left;
+    font-size: 18px;
+    color: rgb(15, 15, 15);
+}
+/* input:not([type="radio"]), select{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px 10px;
+}
+input:not([type="radio"]){
+    width: 170px;
+    height: 30px;
+    margin-bottom: 10px;
+} */
+select{
+    width: 190px;
+    margin-top: 10px;
+}
+input[type="submit"]{
+    width: 50%;
+    font-size: 22px;
+    align-items: center;
+    background-color: royalblue;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    border: 0px;
+    padding: 10px;
+    height: 50px;
+    border-radius: 8px;
+}
+input[type="submit"]:active{
+    box-shadow: -4px -4px 0px #8c087a;
+}

@@ -1,0 +1,163 @@
+<!-- Parwinder Singh
+     Student ID - 8798669 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Web page</title>
+    <link rel="stylesheet" type="text/css" href="assign2.css">
+    <link rel="stylesheet" href="normalize.css">
+    <script src="assign2.js"></script>
+    
+</head>
+<body>
+    <main>
+        <div class="divform" >
+            <form name="form" id="form" method="Post" onsubmit="return formSubmit();"  action="" >
+                <p class="error" id="error"></p>
+                <div class="topic">
+                    <p>Art Garage Sale</p>
+                    <p class="register">Register<br>For a noble cause!</p>
+                </div>
+                    <br>
+
+                <div class="userInfo">
+                    <p class="info"><b>Sign Up</b></p>
+                    <hr>
+                    <input id="name" class="text"  placeholder="Username" type="text"><br>
+                    <input id="email" class="text"  placeholder="Email ID" type="text"><br>
+                    <input id="password" class="text" placeholder="Password" type="text"><br>
+                </div>
+                <div>
+                    <br>
+                    <p class="info"><b>Card info:</b></p>
+                    <hr>
+                    <input type="text" class="text" id="credit" placeholder="XXXX-XXXX-XXXX-XXXX"><br>
+                    
+                    <p class="info"><b>Expiry Month:</b></p><hr>
+                        <select class="text" id="expiryMonth" name="expiryMonth">
+                        <option value="0">-- Select expiry month --</option>
+                            <option value="JAN">January</option>
+                            <option value="FEB">February</option>
+                            <option value="MAR">March</option>
+                            <option value="APR">April</option>
+                            <option value="MAY">May</option>
+                            <option value="JUN">June</option>
+                            <option value="JUL">July</option>
+                            <option value="AUG">August</option>
+                            <option value="SEP">September</option>
+                            <option value="OCT">October</option>
+                            <option value="NOV">November</option>
+                            <option value="DEC">December</option>
+                        </select><br>
+                    
+                        <p class="info"><b>Expiry Year:</b></p><hr>
+                        <select class="text" id="expiryYear" name="expiryYear">
+                            <option value="0">-- Selct expiry year --</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                        </select><br><br>
+        
+                </div>
+                    <input type="submit" value="Submit"  class="button" >
+        
+                
+        
+                    
+            </form>
+    
+        </div>
+        <section> 
+            <div class="art" id="art" style="display: none;">
+                <br>
+                <h1>Art on sale</h1>
+                <br><br>
+                <div class="artItem">
+                    <figure>
+                        <img
+                         src="gallery/Sketch1.jpg"
+                         alt="Art 1">
+                        <figcaption>Art 1</figcaption>
+                       </figure>
+                  
+                   
+                    <p class="price">For Sale- $35</p>
+                    <input type="button" class="button" value="Add" id="b1">
+                </div>
+        
+                <div class="artItem">
+                 
+                    <figure>
+                        <img
+                         src="gallery/Sketch2.jpg"
+                         alt="Art 2">
+                        <figcaption>Art 2</figcaption>
+                       </figure>
+                    <p class="price">For Sale- $55</p>
+                    <button class="button" type="submit" id="b2">Add</button>
+                    
+                </div>
+        
+                <div class="artItem">
+   
+                    <figure>
+                        <img
+                         src="gallery/Sketch4.jpg"
+                         alt="Art 3">
+                        <figcaption>Art 3</figcaption>
+                       </figure>
+                    <p class="price">For Sale- $65</p>
+                    <input type="button" class="button" value="Add" id="b3"></button>
+                </div>
+        
+                <div class="artItem">
+                 
+                    <figure>
+                        <img
+                         src="gallery/Sketch5.jpg"
+                         alt="Art 4">
+                        <figcaption>Art 4</figcaption>
+                       </figure>
+                    <p class="price">For Sale- $70</p>
+                    <input type="button" class="button" value="Add" id="b4"></button>
+                </div>
+                <br>
+                <div>
+                    <!-- item-list -->
+                    <ul id="item-list">
+                        <!-- Cart items  -->
+                       </ul>
+                </div>
+                <br><br>
+                <hr>
+                <div class="sum"  id="count">
+                    <br><br>
+                    
+                    <label for="count_p" style="margin-top: 15rem;"><b> Your Cart: </b></label><br>
+                   
+                    <div id="display">
+                        <p>Items added will print here</p>
+                    </div>
+                    <br/>
+                    <input type="button" id="receipt" value="Receipt" class="button" style="margin-bottom: -11px;">
+                   
+                    <p class="error" id="error"></p>
+        
+                </div>
+            </div>
+        </section>
+        
+    </main>
+</body>
+</html>

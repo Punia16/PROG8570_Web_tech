@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section> 
+        <div class="art" id="art">
+            <br>
+            <center><h2>Art on sale</h2></center>
+            <br><br>
+            <div class="product">
+                <figure>
+                    <img
+                     src="gallery/Sketch1.jpg"
+                     alt="Art 1">
+                    <figcaption>Art 1</figcaption>
+                   </figure>
+                <!-- <p class="product_name">Art 1</p><br> -->
+                <p class="cost">$50</p>
+                <input type="button" class="button" value="Buy" id="b1">
+            </div>
+    
+            <div class="product">
+                <!-- <div class="purchase">
+                    <img src="gallery/Sketch2.jpg" alt="Lamp" width="100%" height="200px">
+                </div>
+                <p class="product_name">Art 2</p><br> -->
+                <figure>
+                    <img
+                     src="gallery/Sketch2.jpg"
+                     alt="Art 2">
+                    <figcaption>Art 2</figcaption>
+                   </figure>
+                <p class="cost">$50</p>
+                <input type="button" class="button" value="Buy" id="b2">
+            </div>
+    
+            <div class="product">
+                <!-- <div class="purchase">
+                    <img src="gallery/Sketch3.jpg" alt="Lamp" width="100%" height="200px">
+                </div>
+                <p class="product_name">Art 3</p><br> -->
+                <figure>
+                    <img
+                     src="gallery/Sketch3.jpg"
+                     alt="Art 3">
+                    <figcaption>Art 3</figcaption>
+                   </figure>
+                <p class="cost">$50</p>
+                <input type="button" class="button" value="Buy" id="b3">
+            </div>
+    
+            <div class="product">
+                <!-- <div class="purchase">
+                    <img src="gallery/Sketch4.jpg" alt="Lamp" width="100%" height="200px">
+                </div>
+                <p class="product_name">Art 4</p><br> -->
+                <figure>
+                    <img
+                     src="gallery/Sketch4.jpg"
+                     alt="Art 4">
+                    <figcaption>Art 4</figcaption>
+                   </figure>
+                <p class="cost">$50</p>
+                <input type="button" class="button" value="Buy" id="b4"></button>
+            </div>
+    
+            <div class="product">
+                <!-- <div class="purchase">
+                    <img src="gallery/Sketch5.jpg" alt="Lamp" width="100%" height="200px">
+                </div>
+                <p class="product_name">Art 5</p><br> -->
+                <figure>
+                    <img
+                     src="gallery/Sketch5.jpg"
+                     alt="Art 5">
+                    <figcaption>Art 5</figcaption>
+                   </figure>
+                <p class="cost">$50</p>
+                <input type="button" class="button" value="Buy" id="b5"></button>
+            </div>
+            
+            <div class="product" style="display: none;    padding: 15px;
+    
+                width: 400px;
+                display: block;" id="count">
+    
+                <label for="count_p" style="font-size: 20px;font-family: 'Quicksand', sans-serif;">Enter Count of product: </label><br>
+    
+                <input type="number" class="count" id="count_p" style="    width: 200px;
+                font-size: 20px;
+                height: 25px;
+                margin-top: 10px;
+                margin-bottom: 30px;font-family: 'Quicksand', sans-serif;">
+    
+                <center><input type="button" id="calc" value="Submit" class="button" style="margin-bottom: -11px;"></center>
+    
+                <p class="error" id="error"></p>
+    
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 2nd section block -->
+    <section>
+        <h1>My Photo Gallery</h1>
+        <div class="art-container" id="art">
+            <div class="art-item">
+         <figure>
+          <img
+           src="https://images.pexels.com/photos/10771989/pexels-photo-10771989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+           alt="Art 1">
+          <figcaption>Art 1</figcaption>
+         </figure>
+        </div>
+     
+        <div class="art-item">
+         <figure>
+          <img
+           src="https://images.pexels.com/photos/10343486/pexels-photo-10343486.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+           alt="Art 2">
+          <figcaption>Art 2</figcaption>
+         </figure>
+        </div>
+     
+        <div class="art-item">
+         <figure>
+          <img
+           src="https://images.pexels.com/photos/7594087/pexels-photo-7594087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+           alt="Art 3">
+          <figcaption>Art 3</figcaption>
+         </figure>
+        </div>
+     
+        <div class="art-item">
+         <figure>
+          <img
+           src="https://images.pexels.com/photos/9049082/pexels-photo-9049082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+           alt="Art 4">
+          <figcaption>Art 4</figcaption>
+         </figure>
+        </div>
+     
+        <div class="art-item">
+         <figure>
+          <img
+           src="https://images.pexels.com/photos/9976334/pexels-photo-9976334.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+           alt="Art 5">
+          <figcaption>Art 5</figcaption>
+         </figure>
+        </div>
+       
+        <div class="grid-item" style="display: none;    padding: 15px;
+
+            width: 400px;
+            display: block;" id="count">
+
+            <label for="count_p" style="font-size: 20px;font-family: 'Quicksand', sans-serif;">Enter Count of product: </label><br>
+
+            <input type="number" class="count" id="count_p" style="    width: 200px;
+            font-size: 20px;
+            height: 25px;
+            margin-top: 10px;
+            margin-bottom: 30px;font-family: 'Quicksand', sans-serif;">
+
+            <center><input type="button" id="calc" value="Submit" class="button" style="margin-bottom: -11px;"></center>
+
+            <p class="error" id="error"></p>
+
+        </div>
+    </div>
+    </section>
+</body>
+</html>

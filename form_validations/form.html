@@ -1,0 +1,147 @@
+<!-- Latest one -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Forms and Validations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <script type="text/javascript" src="js/form.js"></script> -->
+    <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+</head>
+<body>
+  <main>
+    
+    
+
+    <form name="myForm" id="myForm" method="Post" onsubmit="return formSubmit();"  action="" >
+      
+      
+      <p style="text-align: center;">User details</p>
+    <label>User Name</label>
+    <input id="username" placeholder="Your Name" type="text" name="username"><br/>
+
+    <label>Email</label>
+    <input id="email" placeholder="email" type="email" name="email"><br/>
+
+    <label>Password</label>
+    <input id="password" placeholder="Password" type="password" name="password"><br/>
+
+    <label>Card Number</label>
+    <input id="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX" type="cardnumber" name="cardnumber"><br/>
+
+    <label>Address</label>
+    <input id="address" placeholder="Enter Address" type="address" name="address"><br/>
+    
+    <label>Expiry Month</label>
+    <select id="expiryMonth" name="expiryMonth">
+      <option value="0">-- Select month --</option>
+          <option value="JAN">January</option>
+          <option value="FEB">February</option>
+          <option value="MAR">March</option>
+          <option value="APR">April</option>
+          <option value="MAY">May</option>
+          <option value="JUN">June</option>
+          <option value="JUL">July</option>
+          <option value="AUG">August</option>
+          <option value="SEP">September</option>
+          <option value="OCT">October</option>
+          <option value="NOV">November</option>
+          <option value="DEC">December</option>
+      </select><br>
+
+      <label>Expiry Year</label>
+      <select id="expiryYear" name="expiryYear">
+        <option value="0">-- Selct year --</option>
+           <option value="2022">2022</option>
+           <option value="2023">2023</option>
+           <option value="2024">2024</option>
+           <option value="2025">2025</option>
+           <option value="2026">2026</option>
+           <option value="2027">2027</option>
+           <option value="2028">2028</option>
+           <option value="2029">2029</option>
+           <option value="2030">2030</option>
+           <option value="2031">2031</option>
+       </select><br><br>
+
+    <!-- <label>Number of Tickets</label>
+    <select name="tickets" id="tickets">
+        <option value="">----- Select -----</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select><br/>
+
+    <label>Which Campus?</label>
+    <select name="campus" id="campus">
+        <option value="">----- Select -----</option>
+        <option value="Doon">Doon</option>
+        <option value="Waterloo">Waterloo</option>
+        <option value="Cambridge">Cambridge</option>
+    </select></br> -->
+
+    <!-- <form id="add-form" >
+      <label>Name: 
+        <input type="text" id="item-name" placeholder="Item name">
+      </label>
+      <label>Price:
+        <input type="number" id="item-price" step="0.01">
+      </label>
+      <button type="submit">Add Item</button>
+    </form> -->
+
+    <br/><br/>
+
+    <input type="submit" value="Submit">
+    <p id="errors"></p>
+    </form>  
+  
+    <div class="formData">
+      <p style="text-align: center;">Garage Shopping</p>
+      <p style="text-align: center;">Fund Raiser<br>A litle for a cause!!</p>
+      <div id="add-form" class="form2">
+        <label>Name: 
+          <input type="text" id="item-name" placeholder="Item name">
+        </label></br>
+        <label>Price:
+          <input type="number" id="item-price" placeholder="Price" step="0.01">
+        </label></br> 
+        </label></br>
+        <!-- <button type="submit">Add Item</button> -->
+        <center><input type="button" id="calc" value="Add Item" class="button" style="margin-bottom: -11px;"></center>
+        <p class="error" id="error"></p>
+      </div>
+      
+      <!-- <div id="cart-qty"> 
+        qty 
+      </div>
+    
+      <ul id="item-list">
+       Cart items 
+      </ul>
+    
+      <div id="cart-total">
+        total 
+      </div>
+    -->
+      
+    </div>
+ 
+
+
+    <script src="js/form.js"></script>
+  </main> 
+</body>
+</html>
+
+
+
+
+
+
+
+

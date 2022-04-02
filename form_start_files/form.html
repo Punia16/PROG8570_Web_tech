@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Forms and Validations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/form.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+</head>
+<body>
+  <main>
+  
+    <!-- <form>
+      Build HTML form here -->
+      <form name="myForm" id="myForm" method="Post" onsubmit="return formSubmit();"  action="" >
+        <label>Username</label>
+        <input id="username" placeholder="Your name" type="text" name="username"><br/>
+    
+        <label>Email</label>
+        <input id="email" placeholder="email@domain.com" type="email" name="email"><br/>
+    
+        <label>Password</label>
+        <input id="password" placeholder="Password" type="password" name="password"><br/>
+    
+        <label>Card Number</label>
+        <input id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" type="cardNumber" name="cardNumber"><br/>
+    
+        <label>Post Code</label>
+        <input id="postcode" placeholder="X9X 9X9" type="postcode" name="postcode"><br/>
+        
+        <label>Save Card</label>
+        <input type="radio" value="yes" id="radio1" name="lunch">Yes
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" value="no" id="radio2" name="lunch">No
+        <br/>
+    
+        <label>Number of Tickets</label>
+        <select name="tickets" id="tickets">
+            <option value="">----- Select -----</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select><br/>
+    
+        <label>Which Campus?</label>
+        <select name="campus" id="campus">
+            <option value="">----- Select -----</option>
+            <option value="Doon">Doon</option>
+            <option value="Waterloo">Waterloo</option>
+            <option value="Cambridge">Cambridge</option>
+        </select>
+    
+        <br/><br/>
+    
+        <input type="submit" value="Submit">
+        <p id="errors"></p>
+    </form>  
+  
+    <div class="formData">
+      <p id="formResult">This is where the form data should be displayed.</p>
+    </div>
+  </main>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <center>
+        <div class="divform" id="form">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+            
+                <link rel="stylesheet" href="normalize.css">
+                <link rel="stylesheet" href="assign2.css">
+            <script src="test.js"></script>
+            
+            <div class="title">
+                <p>Rohit's Garage Sale</p>
+                <p class="subtitle">Fund Raiser<br>Everything for $50!</p>
+            </div>
+            <br>
+            <div class="contact">
+                <p class="details"><b>Contact Details</b></p>
+            
+            <input type="text" class="text" id="name" placeholder="Name"><br><br>
+
+            <input type="text" class="text" id="email" placeholder="Email"><br><br>
+                </div>
+            <div>
+<p class="details" style="margin-top: -3px;"><b>Credit Card Info.</b></p>
+             <input type="text" class="text" id="credit" placeholder="XXXX-XXXX-XXXX-XXXX"><br><br>
+
+            <input type="text" class="text" id="month" placeholder="MMM"><br><br>
+
+            <input type="text" class="text" id="year" placeholder="YYYY"><br><br>
+</div>
+            <input type="button" value="Submit" onclick=submit(); style="width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    height: 40px;
+    font-family: 'Quicksand';
+    background: darkblue;
+    color: white;
+    font-size: 17px;
+    margin-bottom: 30px;
+    border: none;">
+
+            
+
+            <p class="error" id="error"></p>
+
+        </div>
+
+        
+
+
+
+        <div class="okk" id="okk" style="display: none;">
+
+            <div class="product">
+
+                <div class="purchase">
+<img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="100%" height="200px">
+                  
+                
+
+                </div>
+<p class="product_name">Lamp</p><br>
+                <p class="product_descrip">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed commodo arcu. Phasellus ut porta turpis. Etiam eu nisl et lectus egestas hendrerit sit amet at arcu. Curabitur justo velit, pulvinar eget libero vitae, finibus maximus nibh. Quisque bibendum suscipit justo a auctor. Curabitur sed erat sapien.</p>
+                <p class="cost">$50</p>
+                <input type="button" class="button" value="Buy" id="b1">
+
+
+            </div>
+
+            <div class="product">
+
+                <div class="purchase">
+
+                   <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="100%" height="200px">
+
+                  
+
+                </div>
+
+            <p class="product_name">Desk</p><br>
+                <p class="product_descrip">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed commodo arcu. Phasellus ut porta turpis. Etiam eu nisl et lectus egestas hendrerit sit amet at arcu. Curabitur justo velit, pulvinar eget libero vitae, finibus maximus nibh. Quisque bibendum suscipit justo a auctor. Curabitur sed erat sapien.</p>
+                <p class="cost">$50</p>
+                 <input type="button" class="button" value="Buy" id="b2">
+
+            </div>
+
+            <div class="product">
+
+                <div class="purchase">
+
+                
+  <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="100%" height="200px">
+                  
+
+                </div>
+
+               <p class="product_name">Chair</p><br>
+                <p class="product_descrip">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed commodo arcu. Phasellus ut porta turpis. Etiam eu nisl et lectus egestas hendrerit sit amet at arcu. Curabitur justo velit, pulvinar eget libero vitae, finibus maximus nibh. Quisque bibendum suscipit justo a auctor. Curabitur sed erat sapien.</p>
+                <p class="cost">$50</p>
+                    <input type="button" class="button" value="Buy" id="b3">
+
+            </div>
+
+            <div class="product">
+
+                <div class="purchase">
+
+                     <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="100%" height="200px">
+
+                  
+
+                </div>
+
+               <p class="product_name">Bag</p><br>
+                <p class="product_descrip">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed commodo arcu. Phasellus ut porta turpis. Etiam eu nisl et lectus egestas hendrerit sit amet at arcu. Curabitur justo velit, pulvinar eget libero vitae, finibus maximus nibh. Quisque bibendum suscipit justo a auctor. Curabitur sed erat sapien.</p>
+                <p class="cost">$50</p>
+                 <input type="button" class="button" value="Buy" id="b4"></button>
+
+            </div>
+
+            <div class="product">
+
+                <div class="purchase">
+
+                   
+  <img src="https://www.w3schools.com/images/lamp.jpg" alt="Lamp" width="100%" height="200px">
+                   
+
+                </div>
+
+              <p class="product_name">Books Set</p><br>
+                <p class="product_descrip">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed commodo arcu. Phasellus ut porta turpis. Etiam eu nisl et lectus egestas hendrerit sit amet at arcu. Curabitur justo velit, pulvinar eget libero vitae, finibus maximus nibh. Quisque bibendum suscipit justo a auctor. Curabitur sed erat sapien.</p>
+                <p class="cost">$50</p>
+                 <input type="button" class="button" value="Buy" id="b5"></button>
+
+            </div>
+
+    
+
+            <div class="product" style="display: none;    padding: 15px;
+   
+    width: 400px;
+    display: block;" id="count">
+
+                <label for="count_p" style="font-size: 20px;font-family: 'Quicksand', sans-serif;">Enter Count of product: </label><br>
+
+                <input type="number" class="count" id="count_p" style="    width: 200px;
+    font-size: 20px;
+    height: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;font-family: 'Quicksand', sans-serif;">
+
+                <center><input type="button" id="calc" value="Submit" class="button" style="margin-bottom: -11px;"></center>
+
+                <p class="error" id="error"></p>
+
+            </div>
+
+        </div>
+
+    </center>
+
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

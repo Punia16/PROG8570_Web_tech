@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Forms and Validations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/form.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="css/form.css">
+</head>
+<body>
+  <header>
+    <h1>Sign In</h1>
+   </header>
+  <main>
+  
+  <form name="myForm" id="myForm" method="Post" onsubmit="return formSubmit();"  action="" >
+    <label>Username</label>
+    <input id="username" placeholder="Your Name" type="text" name="username"><br/>
+
+    <label>Email</label>
+    <input id="email" placeholder="Email" type="email" name="email"><br/>
+
+    <label>Password</label>
+    <input id="password" placeholder="Password" type="password" name="password"><br/>
+
+    <label>Card Number</label>
+    <input id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" type="cardNumber" name="cardNumber"><br/>
+
+    <label>Expiry Month</label>
+    <select id="expiryMonth" title="select month" name="expiryMonth">
+      <option value="0">-- Select month --</option>
+          <option value="January">JAN</option>
+          <option value="February">FEB</option>
+          <option value="March">MAR</option>
+          <option value="April">APR</option>
+          <option value="May">MAY</option>
+          <option value="June">JUN</option>
+          <option value="July">JUL</option>
+          <option value="August">AUG</option>
+          <option value="September">SEP</option>
+          <option value="October">OCT</option>
+          <option value="November">NOV</option>
+          <option value="December">DEC</option>
+      </select><br>
+    <!-- <input id="expiryMonth" placeholder="MMM" type="expiryMonth" name="expiryMonth"><br/> -->
+
+    <label>Expiry Year</label>
+    <!-- <input id="expiryYear" placeholder="YYYY" type="expiryYear" name="expiryYear"><br/>
+     -->
+     <select id="expiryYear" title="select year" name="expiryYear">
+      <option value="0">-- Selct year --</option>
+         <option value="2020">2020</option>
+         <option value="2021">2021</option>
+         <option value="2022">2022</option>
+         <option value="2023">2023</option>
+         <option value="2024">2024</option>
+         <option value="2025">2025</option>
+         <option value="2026">2026</option>
+         <option value="2027">2027</option>
+         <option value="2028">2028</option>
+         <option value="2029">2029</option>
+         <option value="2030">2030</option>
+         <option value="2031">2031</option>
+     </select><br><br>
+
+    <label>Save card</label><br>
+    <input type="radio" value="yes" id="radio1" name="saveCard">Yes
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" value="no" id="radio2" name="saveCard">No
+    <br/>
+
+    <!-- <label>Number of Tickets</label>
+    <select name="tickets" id="tickets">
+        <option value="">----- Select -----</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select><br/>
+
+    <label>Which Campus?</label>
+    <select name="campus" id="campus">
+        <option value="">----- Select -----</option>
+        <option value="Doon">Doon</option>
+        <option value="Waterloo">Waterloo</option>
+        <option value="Cambridge">Cambridge</option>
+    </select> -->
+
+    <br/><br/>
+ 
+    <!-- Submit button -->
+      <input type="submit" value="Submit" name="submit">
+
+      <!-- Reset button -->
+      <!-- <input type="reset" name="reset" value="Reset" />  -->
+
+    <p id="errors"></p>
+  </form>
+  
+  <div class="formData">
+    <p id="formResult">This is where the form data should be displayed.</p>
+  </div>
+  </main>
+</body>
+</html>
+
+
+
+
+
+
+
+

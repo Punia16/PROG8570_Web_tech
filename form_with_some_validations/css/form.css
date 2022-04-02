@@ -1,0 +1,76 @@
+body{
+    background-color: #6f6e70;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+header{
+    color: white;
+    text-align: center;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#errors{
+    color: white;
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-size: 26px;
+    line-height: 34px;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px;
+
+}
+form, .formData{
+    width: 380px;
+    border: 6px solid white;
+    box-shadow: 0 0 10px #04344b;
+    padding: 30px;
+    margin: 80px auto;
+    color: white;
+    background-color: #333532;
+    border-radius: 50px;
+}
+label{
+    width: 200px;
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    border-radius: 80px;
+}
+input{
+    border-radius: 10px;
+   
+}
+input:not([type="radio"]), select{
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px 10px;
+}
+input:not([type="radio"]){
+    width: 170px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+select{
+    width: 190px;
+    margin-top: 10px;
+}
+input[type="submit"]{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    font-size: 22px;
+    background-color: #2c7da3;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    border: 0px;
+    padding: 10px;
+    height: 50px;
+    /* box-shadow: 4px 4px 0px #2c7da3; */
+    border-radius: 8px;
+}
+input[type="submit"]:active{
+    box-shadow: -4px -4px 0px #2c7da3;
+}
