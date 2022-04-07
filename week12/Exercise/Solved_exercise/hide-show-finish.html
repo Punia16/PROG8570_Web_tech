@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        p{
+            display: none; /* hide paragraphs */
+            font-weight: bold;
+            padding: 10px;
+            border: 2px solid black;
+        }
+    </style>
+    <script>
+         $(document).ready(function(){
+            $('#show1').click(function(){
+                $('#answer1').toggle(); // toggle paragraph 
+            }); 
+            $('#show2').click(function(){
+                $('#answer2').toggle();
+            }); 
+            $('#show3').click(function(){
+                $('#answer3').toggle();
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>
+                What is 2 + 8?
+            </h2>
+            <button id="show1">Check answer</button>
+            <p id="answer1">10</p>
+        </section>
+        <section>
+            <h2>
+                What is the capital of Canada?
+            </h2>
+            <button id="show2">Check answer</button>
+            <p id="answer2">Ottawa</p>
+        </section>
+        <section>
+            <h2>
+                What are we learning?
+            </h2>
+            <button id="show3">Check answer</button>
+            <p id="answer3">jQuery</p>
+        </section>
+    </main>
+</body>
+</html>

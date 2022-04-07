@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON DEMO</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+   .wrapper {
+    display: flex;
+   }
+  </style>
+ </head>
+
+ <body>
+  <div class="wrapper">
+   <p>Name:</p>
+   <p class="name"></p>
+  </div>
+
+  <div class="wrapper">
+   <p>Height:</p>
+   <p class="height"></p>
+  </div>
+
+  <div class="wrapper">
+   <p>Team:</p>
+   <p class="team"></p>
+  </div>
+
+  <div class="wrapper">
+   <p>PTS:</p>
+   <p class="pts"></p>
+  </div>
+
+  <div class="wrapper">
+   <p>RBS:</p>
+   <p class="rbs"></p>
+  </div>
+
+ </body>
+ <script>
+  // Wait till the dom is ready
+  $(document).ready(function () {
+   // get the json data
+   // pass getJSON method a reference to a method
+   $.getJSON('./player-data.json', playerData);
+  })
+
+  // Function to inject our json data to our html
+  function playerData(data) {
+   // select html tag, call .text and set our html
+   $('.name').text(data.name)
+   $('.height').text(data.height)
+   $('.team').text(data.team)
+   $('.pts').text(data.pts)
+   $('.rbs').text(data.rbs)
+  }
+ </script>
+
+</html>

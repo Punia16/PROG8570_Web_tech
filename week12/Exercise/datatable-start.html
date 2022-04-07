@@ -1,0 +1,71 @@
+<!-- 	
+	Note: This example will only work if using a local server 
+	like XAMPP or node.js. Alternatively, the easy way is 
+	to use Live Server extension with VS Code:
+	https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+	If not using a local server, this will not work due to 
+	Cross-origin blocking of the json data file by the browser.
+-->
+<!-- 
+    In this web page, we will fetch data using APIs from a service and render it in a table using DataTables.
+ -->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Open Weather</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+        <style>
+            body {
+                max-width: 600px;
+                margin: auto;
+                border: 2px solid black;
+                box-shadow: 0 0 10px grey;
+                padding: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="datawrapper">
+        </div>
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Secret Identity</th>
+                    <th>Powers</th>
+                </tr>
+            </thead>
+            <tbody id="superHeroInfo">
+            </tbody>
+        </table>
+        <script>
+            // https://datatables.net/examples/basic_init/zero_configuration.html
+            // Grab data from external api
+            // https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+            
+            // Callback function after fetching data
+                // read and add squad info to page
+
+                // loop through members data
+                    // build list of powers of each member
+
+                    // add each member to output
+
+            
+            // Write table data in the table body
+
+            // add jquery datatable functionality
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,81 @@
+<!-- 	
+	Note: This example will only work if using a local server 
+	like XAMPP or node.js. Alternatively, the easy way is 
+	to use Live Server extension with VS Code:
+	https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+	If not using a local server, this will not work due to 
+	Cross-origin blocking of the json data file by the browser.
+-->
+<!-- 
+    In this web page, we will fetch data using APIs from a service. 
+    For our example, we will use https://openweathermap.org/api
+    Please sign up at https://home.openweathermap.org/users/sign_up to get your API key
+ -->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Open Weather</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    </head>
+
+    <body>
+        <div style="max-width: 600px; margin:auto;">
+            <canvas id="myChart"></canvas>
+        </div>
+        <script>
+
+            // this is the main function of the program
+            function loadWeather(location) {
+
+                var appID = 'e00e1a0fa193f245f7a19bc0ced27885'; // Please sign up on https://home.openweathermap.org/users/sign_up and get your own free API Key to use here
+                var apiEndPoint = 'https://api.openweathermap.org/data/2.5/forecast?q=' + location + '&appid=' + appID;
+
+                $.getJSON(apiEndPoint, displayWeatherForecast); // get the JSON data from apiEndPoint and call the function displayWeatherForecast
+            }
+
+            // callback function after fetching the JSON data from the apiEndPoint
+            function displayWeatherForecast(jsonResponse) {
+                console.log(jsonResponse); // to check the data received
+                // declaring empty arrays to store labels and data for the chart
+                var labelArray = new Array();
+                var dataArray = new Array();
+                for (i in jsonResponse.list) { // looping through the JSON data received
+                    labelArray.push(jsonResponse.list[i].dt_txt);
+                    dataArray.push(jsonResponse.list[i].main.temp);
+                }
+                var ctx = document.getElementById('myChart').getContext('2d');// CanvasRenderingContext2D
+                var chart = new Chart(ctx, {
+                    type: 'line', // creating a line chart
+
+                    data: {
+                        labels: labelArray,
+                        datasets: [
+                            {
+                                label: "Forecast",
+                                fill: false,
+                                backgroundColor: 'rgb(255, 99, 132)',
+                                borderColor: 'rgb(255, 99, 132)',
+                                data: dataArray,
+                            }
+                        ]
+                    }
+                });
+
+            }
+
+
+            loadWeather('Toronto'); // call the loadWeather function to start the program
+
+
+        </script>
+
+
+
+    </body>
+
+</html>

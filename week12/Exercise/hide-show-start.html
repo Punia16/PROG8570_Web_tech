@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="UTF-8">
+  <title>FAQ</title>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+   crossorigin="anonymous"></script> -->
+   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+   crossorigin="anonymous"></script>
+  <style>
+   p {
+    display: none;
+    /* hide paragraphs */
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid black;
+   }
+  </style>
+  <script>
+
+  </script>
+ </head>
+
+ <body>
+  <main>
+   <section>
+    <h2>
+     What is 2 + 8?
+    </h2>
+    <button id="show1">Check answer</button>
+    <p id="answer1">10</p>
+   </section>
+
+   <section>
+    <h2>
+     What is the capital of Canada?
+    </h2>
+    <button id="show2">Check answer</button>
+    <p id="answer2">Ottawa</p>
+   </section>
+
+   <section>
+    <h2>
+     What are we learning?
+    </h2>
+    <button id="show3">Check answer</button>
+    <p id="answer3">jQuery</p>
+   </section>
+  </main>
+</body>
+<!-- jQuey usage examples -->
+  <script>
+      $(document).ready(function(){
+          $("#show1").click(function(){
+              $("#answer1").toggle()
+          })
+      })
+      $(document).ready(function(){
+          $("#show2").click(function(){
+              $("#answer2").toggle()
+          })
+      })
+      $(document).ready(function(){
+          $("#show3").click(function(){
+              $("#answer3").toggle()
+          })
+      })
+  </script>
+</html>

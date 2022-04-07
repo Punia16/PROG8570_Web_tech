@@ -1,0 +1,99 @@
+<!-- 	
+	Note: This example will only work if using a local server 
+	like XAMPP or node.js. Alternatively, the easy way is 
+	to use Live Server extension with VS Code:
+	https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+	If not using a local server, this will not work due to 
+	Cross-origin blocking of the json data file by the browser.
+-->
+<!-- 
+    In this web page, we will fetch data using APIs from a service and render it in a table using DataTables.
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Open Weather</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+    <style>
+        body{
+            max-width: 600px; 
+            margin:auto;
+            border: 2px solid black;
+            box-shadow: 0 0 10px grey;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="datawrapper">
+    </div>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Secret Identity</th>
+                <th>Powers</th>
+            </tr>
+        </thead>
+        <tbody id="superHeroInfo">
+        </tbody>
+    </table>
+<script>
+
+// this is the main function of the program
+function loadData(location) {
+    let apiEndPoint = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json'; // data made available by MDN Web Docs
+    $.getJSON(apiEndPoint, displayTable); // get the JSON data from apiEndPoint and call the function displayTable
+}
+
+// callback function after fetching the JSON data from the apiEndPoint
+function displayTable(jsonResponse){
+    console.log(jsonResponse); // to check the data received
+    // reading and adding the squad info to the page
+    let squadInfo = `
+        <h1>Squad Name: ${jsonResponse.squadName}</h1>
+        <h2>Home Town: ${jsonResponse.homeTown}</h2>
+        <h2>Formed in: ${jsonResponse.formed}</h2>
+        <h2>Secret Base: ${jsonResponse.secretBase}</h2>
+        <h2>Is active: ${jsonResponse.active}</h2>
+    `;
+    document.getElementById('datawrapper').innerHTML = squadInfo;
+
+    let superHeroes = '';
+    for(member of jsonResponse.members){ // looping through the members data
+        // building a list of powers of each member
+        let powers = `<ul>`;
+        for(power of member.powers){
+            powers += `<li>${power}</li>`;
+        }
+        powers += `</ul>`;
+        // adding each member to the output
+        superHeroes += `
+            <tr>
+                <td>${member.name}</td>
+                <td>${member.age}</td>
+                <td>${member.secretIdentity}</td>
+                <td>${powers}</td>
+            </tr>
+        `;
+    }
+    // writing the table data in the table body
+    document.getElementById('superHeroInfo').innerHTML = superHeroes;
+    // adding jQuery DataTable functionality for searching, sorting within the table
+    $('#dataTable').DataTable();
+}
+
+loadData();
+
+
+</script>
+
+</body>
+</html>
