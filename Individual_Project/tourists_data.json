@@ -1,0 +1,38 @@
+{
+    "tourist": [
+      {
+        "year": "1950",
+        "noOfTourists" : "25.2"
+        
+      },
+      {
+        "year": "1960",
+        "noOfTourists" : "69.4"
+        
+      },
+      {
+        "year": "1970",
+        "noOfTourists" : "165.8"
+      },
+      {
+        "year": "1980",
+        "noOfTourists" : "278.1"
+      },
+      {
+        "year": "1990",
+        "noOfTourists" : "439.4"
+      },
+      {
+        "year": "2000",
+        "noOfTourists" : "682.1"
+      },
+      {
+        "year": "2010",
+        "noOfTourists" : "950.8"
+      },
+      {
+        "year": "2018",
+        "noOfTourists" : "1400"
+      }
+    ]
+}

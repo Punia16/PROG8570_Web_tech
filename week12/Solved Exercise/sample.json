@@ -1,0 +1,41 @@
+{
+    "squadName" : "Super Hero Squad",
+    "homeTown" : "Hero City",
+    "formed" : 2020,
+    "secretBase" : "CN tower",
+    "active" : true,
+    "members" : [
+      {
+        "name" : "Molecule Woman",
+        "age" : 29,
+        "secretIdentity" : "Dan Jukes",
+        "powers" : [
+          "Radiation resistance",
+          "Turning tiny",
+          "Radiation blast"
+        ]
+      },
+      {
+        "name" : "Madame Lowercut",
+        "age" : 39,
+        "secretIdentity" : "Jane Wilson",
+        "powers" : [
+          "Million tonne punch",
+          "Damage resistance",
+          "Superhuman reflexes"
+        ]
+      },
+      {
+        "name" : "Eternal Flame",
+        "age" : 1000000,
+        "secretIdentity" : "Unknown",
+        "powers" : [
+          "Immortality",
+          "Heat Immunity",
+          "Inferno",
+          "Teleportation",
+          "Interdimensional travel"
+        ]
+      }
+    ]
+  }

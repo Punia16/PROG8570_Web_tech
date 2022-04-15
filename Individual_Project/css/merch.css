@@ -1,0 +1,104 @@
+:root {
+	--link-color:#f7e7d9;
+	--maroon:  #890417;
+	--light: #ddd;
+	--body-font-style: "monospace", "Gill Sans", sans-serif;
+	--thumnail-maroon: #ac5757;
+	--blue-light: #ced4da;
+}
+body {
+	font-family: var(--body-font-style);
+	color: rgb(22, 68, 8);
+}
+header {
+	text-align: center;
+	position: relative;
+	height: 200px;
+	background: url(../images/Travel_cover.jpg) rgba(0, 0, 0, 0.5);
+	background-blend-mode: multiply ;
+	background-size: contain;
+	border: 20px solid #010101;
+}
+header h1.actortext {
+	color: transparent;
+	font-size: 5rem;
+	position: absolute; 
+    inset: 0;
+    padding: 20px;
+    color: #fbeeef; 
+    font-family: sans-serif; 
+    font-weight: bold; 
+}
+.section-middle {
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	
+}
+.side-table{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.chart-heading{
+	/* text-decoration: underline; */
+    margin-bottom: 0.5em;
+    border-style: outset;
+}
+
+.div-container {
+	padding: 1rem;
+	border: 1px solid var(--light);
+	border-radius: 5px;
+	margin-bottom: 1rem;
+	margin-right: 2rem;
+	
+}
+.div-container img {
+	width: 100%;
+}
+.div-container button {
+	padding: 0.5rem 1rem;
+	background-color: var(--maroon);
+	border: 1px solid var(--thumnail-maroon);
+	border-radius: 5px;
+	color: white;
+	margin-top: 2rem;
+}
+.wrapper {
+	max-width: 800px;
+	height: 100%;
+	/* max-height: 1200px; */
+	text-align: center;
+	margin: auto;
+	
+}
+.table-body {
+	max-width: 600px; 
+	margin:auto;
+	border: 2px solid black;
+	box-shadow: 0 0 10px grey;
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.barChart{
+	background-color: var(--maroon);
+	color: white;
+	padding: 10px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.flowChart{
+	background-color: var(--maroon);
+	color: white;
+	padding: 10px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.tableShow{
+	background-color: var(--maroon);
+	color: white;
+	padding: 10px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}

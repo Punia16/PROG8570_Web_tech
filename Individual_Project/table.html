@@ -1,0 +1,241 @@
+<!-- Parwinder Singh 8798669 -->
+<!-- Rohit Arora 8786754 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="icon" href="./images/logo.jpg">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/merch.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+         <!-- Image actor.jpg from Screenrant site https://static1.srcdn.com/wordpress/wp-content/uploads/2019/05/John-Wick-Movies.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5 -->
+         <h1 class="actortext">WANDERLUST</h1> 
+        
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li> <a href="merch.html">DATA</a></li>
+            <li><a href="table.html">REVIEWS</a></li>
+        </ul>
+    </nav>
+
+    <!-- Navigation area && main section && right aside area -->
+    <main>
+        <aside>
+            <div class="dashboard">DASHBOARD</div>
+            <ul>
+                <li class="home-thumbnail"><a href="index.html" active>HOME</a>
+                </li>
+                <li class="merchant-thumbnail">
+                    <a href="merch.html">DATA</a>
+                </li>
+                <li class="table-thumbnail active">
+                    <a href="table.html">TABLE</a>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="main-middle">
+            <article>
+                <h2>INTERNATIONAL TOURISM, NUMBER OF ARRIVALS</h2>
+                <hr class="tagline">
+                <p>
+                    International inbound tourists (overnight visitors) are the number of tourists who travel to a country other than that in which they have their usual residence, but outside their usual environment, for a period not exceeding 12 months and whose main purpose in visiting is other than an activity remunerated from within the country visited. When data on number of tourists are not available, the number of visitors, which includes tourists, same-day visitors, cruise passengers, and crew members, is shown instead. Sources and collection methods for arrivals differ across countries. In some cases data are from border statistics (police, immigration, and the like) and supplemented by border surveys. In other cases data are from tourism accommodation establishments. For some countries number of arrivals is limited to arrivals by air and for others to arrivals staying in hotels. Some countries include arrivals of nationals residing abroad while others do not. Caution should thus be used in comparing arrivals across countries. The data on inbound tourists refer to the number of arrivals, not to the number of people traveling. Thus a person who makes several trips to a country during a given period is counted each time as a new arrival.
+                    Limitations and exceptions: Tourism can be either domestic or international. The data refers to international tourism, where the traveler's country of residence differs from the visiting country. International tourism consists of inbound (arrival) and outbound (departures) tourism.
+                </p>
+                <h2>Published By</h2>
+                <hr class="tagline">
+                <p>
+                    World Development Indicators - World Bank (2021.07.30)
+                </p>
+                <h2>Source</h2>
+                <hr class="tagline">
+                <p>
+                    Yearbook of Tourism Statistics - World Tourism Organization, Compendium of Tourism Statistics - World Tourism Organization
+                </p>
+            </article>
+            
+             <!-- Table -->
+             <div class="div-container">
+                <div class="tableShow">
+                    <p>Searchable/Sortable Table -</p>
+                </div>
+                <div class="table-body">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Country</th>
+                                <th>1950</th>
+                                <th>2020</th>
+                                <th>Absolute Change</th>
+                                <th>Relative Change</th>
+                            </tr>
+                        </thead>
+                        <tbody id="superHeroInfo">
+                        </tbody>
+                    </table>
+                
+                </div>
+            </div>
+
+            <script >
+                function loadData(location) {
+                   $.getJSON("sample.json", displayTable); 
+                }
+                function displayTable(jsonResponse){
+                    let touristTable = '';
+                
+                    // looping through the members data
+                    for(member of jsonResponse.members){ 
+                            touristTable += `
+                            <tr>
+                                <td>${member.country}</td>
+                                <td>${member.Year1950}</td>
+                                <td>${member.Year2020}</td>
+                                <td>${member.absoluteChange}</td>
+                                <td>${member.relativeChange}</td>
+                                
+                            </tr>
+                        `;
+                    }
+                    // writing the table data in the table body
+                    document.getElementById('superHeroInfo').innerHTML = touristTable;
+                    // adding jQuery DataTable functionality for searching, sorting within the table
+                    $('#dataTable').DataTable();
+                }
+                
+                loadData();
+		    </script>
+
+            <!-- <table class="awards-container">
+                    <tr class="table-heading">
+                        <th>Award</th>
+                        <th>Year</th>
+                        <th>Movie</th>
+                        <th>Category</th>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Blockbuster_Entertainment_Awards" title="Blockbuster Entertainment Awards">Blockbuster Entertainment Awards</a>
+                        </td>
+                        <td>2000
+                        </td>
+                        <td>The Matrix
+                        </td>
+                        <td><i>Favorite Actor</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Bravo_Otto" title="Bravo Otto">Bravo Otto</a>
+                        </td>
+                        <td>1994
+                        </td>
+                        <td>Speed
+                        </td>
+                        <td>Best Actor
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Golden_Raspberry_Awards"
+                            title="Golden Raspberry Awards">Golden Raspberry Awards</a>
+                        </td>
+                        <td>2015
+                        </td>
+                        <td>John Wick
+                        </td>
+                        <td>Razzie Redeemer Award
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/Monte-Carlo_Television_Festival"
+                            title="Golden Tomato Awards">Golden Tomato Awards</a>
+                        </td>
+                        <td>2020
+                        </td>
+                        <td>John Wick: Chapter 3 – Parabellum
+                        </td>
+                        <td>Golden Year Award
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Taurus_World_Stunt_Awards"
+                            title="Taurus World Stunt Awards">Taurus World Stunt Awards</a>
+                        </td>
+                        <td>2004
+                        </td>
+                        <td>The Matrix Reloaded
+                        </td>
+                        <td>Action Movie Star of the Year
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/Saturn_Award" class="mw-redirect" title="Teen Choice Awards">Teen Choice Awards</a>
+                        </td>
+                        <td>2006
+                        </td>
+                        <td>The Lake House
+                        </td>
+                        <td>Choice Liplock 
+                        </td>
+                    </tr>
+            </table> -->
+        </section>
+
+        <!-- <section class="section-right">
+           
+           <table class="side-table">
+            <tr>
+                <th colspan="2" >Keanu Reeves</th>
+            </tr>
+            <tr>
+                <th colspan="2" style="padding: 2rem;"> 
+                  <img src="./images/table_img_2.jpg" alt="actor image" class="table_image">
+                </th>
+            </tr>
+            <tr class="side-table-row">
+                <th colspan="2" >Awards and Nominations</th>
+            </tr>
+            <tr class="side-table-row">
+                <th class="td-title">Wins</th>
+                <td>
+                    12
+                </td>
+            </tr>
+            <tr class="side-table-row">
+                <th class="td-title">Nominations</th>
+                <td>
+                    28
+                </td>
+            </tr>
+            <tr class="side-table-row">
+                <th class="td-title">Total movies</th>
+                <td>81</td>
+            </tr>
+        </table>
+        </section> -->
+    </main>
+
+    <footer>
+        <p> Parwinder Singh    &copy;  psingh8669@conestogac.on.ca</p>
+        <p> Rohit Arora    &copy;  rarora6754@conestogac.on.ca</p>
+    </footer>
+</body>
+
+</html>

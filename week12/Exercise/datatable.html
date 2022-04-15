@@ -1,0 +1,251 @@
+<!-- Parwinder Singh 8798669 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Buff</title>
+    <link rel="icon" href="./images/logo.jpg">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/table.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+    <header>
+         <h1 class="actortext">JOHN WICK</h1> 
+         <h3>! DataTable !</h3> 
+    </header>
+
+    <nav>
+        <!-- First level UL for the main -->
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li> <a href="https://en.wikipedia.org/wiki/John_Wick">ABOUT</a></li>
+            <li class="link">
+                <a href="index.html">REVIEWS</a>
+
+                <!-- Second level UL for the main -->
+                <ul class="nested-link">
+                    <li><a href="https://www.imdb.com/title/tt2911666/">IMBD</a></li>
+                    <li><a href="https://www.rottentomatoes.com/m/john_wick">ROOTENTOMATOES</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/John_Wick_(film)">WIKI</a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Navigation area && main section && right aside area -->
+    <main>
+        <aside>
+            <ul>
+                <li class="home-thumbnail"><a href="index.html" active>HOME</a>
+                </li>
+                <li class="merchant-thumbnail">
+                    <a href="merch.html">CHAPTERS</a>
+                </li>
+                <li class="table-thumbnail active">
+                    <a href="table.html">AWARDS</a>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="main-middle">
+            <article>
+                <h2>List of awards received by Keanu Reeves</h2>
+                <hr class="tagline">
+                <p>
+                    The following is a list of awards and nominations received by Canadian actor Keanu Reeves throughout his career. He earned his first award, the MTV Movie Award for Most Desirable Male, in 1992 for his performance in Point Break. Two years later, his role as the lead protagonist in Speed won him a Bravo Otto for best actor and the MTV Movie Award for Best On-Screen Duo along with Sandra Bullock. Although he was nominated for the one-off Golden Raspberry Worst of Our First 25 Years Award in 2005 for having seven previous Razzie nominations, his success in the John Wick franchise led to his nominations for the Razzie Redeemer Award in the 2015 and 2020 ceremonies.
+                </p>
+            </article>
+            <div class="table-body">
+                <!-- <div id="datawrapper">
+                </div> -->
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>1950</th>
+                            <th>2020</th>
+                            <th>Absolute Change</th>
+                            <th>Relative Change</th>
+                        </tr>
+                    </thead>
+                    <tbody id="superHeroInfo">
+                    </tbody>
+                </table>
+            <script>
+            
+            // this is the main function of the program
+            function loadData(location) {
+                // data made available by MDN Web Docs
+                // let apiEndPoint = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json'; 
+                // get the JSON data from apiEndPoint and call the function displayTable
+                // $.getJSON(apiEndPoint, displayTable); 
+                $.getJSON("sample.json", displayTable); 
+            }
+            
+            // callback function after fetching the JSON data from the apiEndPoint
+            function displayTable(jsonResponse){
+            
+                // to check the data received
+                console.log(jsonResponse); 
+                // reading and adding the squad info to the page
+                // let squadInfo = `
+                //     <h1>Squad Name: ${jsonResponse.squadName}</h1>
+                //     <h2>Home Town: ${jsonResponse.homeTown}</h2>
+                //     <h2>Formed in: ${jsonResponse.formed}</h2>
+                //     <h2>Secret Base: ${jsonResponse.secretBase}</h2>
+                //     <h2>Is active: ${jsonResponse.active}</h2>
+                // `;
+                // document.getElementById('datawrapper').innerHTML = squadInfo;
+            
+                let touristTable = '';
+            
+                // looping through the members data
+                for(member of jsonResponse.members){ 
+            
+                    touristTable += `
+                        <tr>
+                            <td>${member.country}</td>
+                            <td>${member.Year1950}</td>
+                            <td>${member.Year2020}</td>
+                            <td>${member.absoluteChange}</td>
+                            <td>${member.relativeChange}</td>
+                            
+                        </tr>
+                    `;
+                }
+                // writing the table data in the table body
+                document.getElementById('superHeroInfo').innerHTML = touristTable;
+                // adding jQuery DataTable functionality for searching, sorting within the table
+                $('#dataTable').DataTable();
+            }
+            
+            loadData();
+            
+            
+            </script>
+            </div>
+
+            <!-- <table class="awards-container">
+                    <tr class="table-heading">
+                        <th>Award</th>
+                        <th>Year</th>
+                        <th>Movie</th>
+                        <th>Category</th>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Blockbuster_Entertainment_Awards" title="Blockbuster Entertainment Awards">Blockbuster Entertainment Awards</a>
+                        </td>
+                        <td>2000
+                        </td>
+                        <td>The Matrix
+                        </td>
+                        <td><i>Favorite Actor</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Bravo_Otto" title="Bravo Otto">Bravo Otto</a>
+                        </td>
+                        <td>1994
+                        </td>
+                        <td>Speed
+                        </td>
+                        <td>Best Actor
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Golden_Raspberry_Awards"
+                            title="Golden Raspberry Awards">Golden Raspberry Awards</a>
+                        </td>
+                        <td>2015
+                        </td>
+                        <td>John Wick
+                        </td>
+                        <td>Razzie Redeemer Award
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/Monte-Carlo_Television_Festival"
+                            title="Golden Tomato Awards">Golden Tomato Awards</a>
+                        </td>
+                        <td>2020
+                        </td>
+                        <td>John Wick: Chapter 3 – Parabellum
+                        </td>
+                        <td>Golden Year Award
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://en.wikipedia.org/wiki/Taurus_World_Stunt_Awards"
+                            title="Taurus World Stunt Awards">Taurus World Stunt Awards</a>
+                        </td>
+                        <td>2004
+                        </td>
+                        <td>The Matrix Reloaded
+                        </td>
+                        <td>Action Movie Star of the Year
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/Saturn_Award" class="mw-redirect" title="Teen Choice Awards">Teen Choice Awards</a>
+                        </td>
+                        <td>2006
+                        </td>
+                        <td>The Lake House
+                        </td>
+                        <td>Choice Liplock 
+                        </td>
+                    </tr>
+            </table> -->
+        </section>
+
+        <!-- <section class="section-right">
+           
+           <table class="side-table">
+            <tr>
+                <th colspan="2" >Keanu Reeves</th>
+            </tr>
+            <tr>
+                <th colspan="2" style="padding: 2rem;"> 
+                  <img src="./images/table_img_2.jpg" alt="actor image" class="table_image">
+                </th>
+            </tr>
+            <tr class="side-table-row">
+                <th colspan="2" >Awards and Nominations</th>
+            </tr>
+            <tr class="side-table-row">
+                <th class="td-title">Wins</th>
+                <td>
+                    12
+                </td>
+            </tr>
+            <tr class="side-table-row">
+                <th class="td-title">Nominations</th>
+                <td>
+                    28
+                </td>
+            </tr>
+            <tr class="side-table-row">
+                <th class="td-title">Total movies</th>
+                <td>81</td>
+            </tr>
+        </table>
+        </section> -->
+    </main>
+
+    <footer>
+        <p> &copy; Parwinder Singh  </p>
+        <p>psingh8669@conestogac.on.ca    2022</p>
+        <p> <a href="https://en.wikipedia.org/wiki/John_Wick">( sourse link )</a></p>
+    </footer>
+</body>
+
+</html>

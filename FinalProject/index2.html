@@ -1,0 +1,630 @@
+<html>
+   <head>
+      <title>Admin Dashboard</title>
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/normalize.css">
+      <!-- <style>
+         *, *::before, *::after {
+         box-sizing: border-box;
+         }
+         body {
+         height: 100%;
+         overflow-x: hidden;
+         }
+         .admin {
+         --spacing: 1rem;
+         display: flex;
+         flex-wrap: wrap;
+         display: grid;
+         height: 100vh;
+         grid-template-rows: 70px 1fr 70px;
+         grid-template-columns: 250px 1fr;
+         grid-template-areas: "header header" "nav    main" "footer footer";
+         }
+         .admin__header {
+         display: flex;
+         flex-basis: 100%;
+         grid-area: header;
+         height: 70px;
+         background-color: #fff;
+         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+         position: relative;
+         }
+         .admin__nav {
+         flex: 0 0 250px;
+         grid-area: nav;
+         background-color: #313541;
+         }
+         .admin__main {
+         flex: 1;
+         grid-area: main;
+         padding: var(--spacing);
+         overflow-y: auto;
+         overflow-x: hidden;
+         -webkit-overflow-scrolling: touch;
+         background-color: #f4f7fa;
+         }
+         .admin__footer {
+         display: flex;
+         grid-area: footer;
+         flex-basis: 100%;
+         justify-content: space-between;
+         align-items: center;
+         height: 70px;
+         padding: 0 var(--spacing);
+         color: #4e5561;
+         background-color: #1d2127;
+         }
+         @media screen and (min-width: 48rem) {
+         .admin {
+         --spacing: 2rem;
+         }
+         }
+         .dashboard {
+         --column-count: 2;
+         display: flex;
+         flex-wrap: wrap;
+         margin: 0 calc(var(--spacing) * -0.5);
+         display: grid;
+         grid-template-columns: repeat(var(--column-count), 1fr);
+         grid-gap: var(--spacing);
+         }
+         .dashboard__item {
+         flex: 1 1 50%;
+         grid-column-end: span 2;
+         padding: calc(var(--spacing) / 2);
+         }
+         .dashboard__item--full {
+         flex-basis: 100%;
+         grid-column: 1 / -1;
+         }
+         .dashboard__item--col {
+         flex-basis: calc(100% / var(--column-count));
+         grid-column-end: span 1;
+         }
+         @media screen and (min-width: 48rem) {
+         .dashboard {
+         --column-count: 4;
+         }
+         }
+         @supports (display: grid) {
+         .dashboard {
+         margin: 0;
+         }
+         .dashboard__item {
+         padding: 0;
+         }
+         }
+         a {
+         color: #dc5a60;
+         text-decoration: none;
+         }
+         img {
+         max-width: 100%;
+         height: auto;
+         }
+         .logo {
+         display: flex;
+         flex: 0 0 250px;
+         height: 70px;
+         justify-content: center;
+         align-items: center;
+         position: relative;
+         margin: 0;
+         color: #fff;
+         background-color: #dc5a60;
+         font-size: 1rem;
+         }
+         .logo h1 {
+         margin: 0;
+         }
+         .toolbar {
+         display: flex;
+         flex: 1;
+         justify-content: flex-end;
+         align-items: center;
+         padding: 0 var(--spacing);
+         }
+         .menu {
+         list-style-type: none;
+         padding: 0;
+         }
+         .menu__item {
+         border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+         }
+         .menu__link {
+         display: block;
+         padding: 1rem 2rem;
+         color: #76808f;
+         text-decoration: none;
+         }
+         .menu__link:hover, .menu__link:focus {
+         color: #fff;
+         background-color: #1f222d;
+         }
+         .card {
+         border-radius: 10px;
+         height: 100%;
+         padding: 1rem;
+         font-size: 2rem;
+         font-weight: 300;
+         background-color: #fff;
+         box-shadow: 2px 2px #888888;
+         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+         }
+         .btn {
+         display: inline-block;
+         border-radius: 5em;
+         border: 0;
+         padding: 0.5rem 1rem;
+         white-space: nowrap;
+         }
+         .btn--primary {
+         color: #fff;
+         background-color: #56bf89;
+         }
+         .ticker {
+         list-style-type: none;
+         padding: 0;
+         margin: 0;
+         display: flex;
+         flex-wrap: wrap;
+         }
+         .ticker__item {
+         margin-right: 1rem;
+         }
+         table { 
+         width: auto; 
+         border-collapse: collapse; 
+         margin:50px auto;
+         }
+         th { 
+         background: #3498db; 
+         color: white; 
+         font-weight: bold; 
+         }
+         td, th { 
+         padding: 10px; 
+         border: 1px solid #ccc; 
+         text-align: left; 
+         font-size: 18px;
+         }
+         .labels tr td {
+         background-color: #2cc16a;
+         font-weight: bold;
+         color: #fff;
+         }
+         .label tr td label {
+         display: block;
+         }
+         [data-toggle="toggle"] {
+         display: none;
+         }
+         * { 
+         margin:0; padding:0; 
+         box-sizing: border-box;
+         }
+         progress:not(value) {
+         }
+         progress[value] {
+         appearance: none;
+         border: none;
+         width: 100%; height: 20px;
+         background-color: whiteSmoke;
+         border-radius: 3px;
+         box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+         color: royalblue;
+         position: relative;
+         margin: 0 0 0.5em; 
+         }
+         .progress-bar {
+         background-color: whiteSmoke;
+         border-radius: 3px;
+         box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
+         width: 100%; height:20px;
+         }
+         .progress-bar span {
+         background-color: royalblue;
+         border-radius: 3px;
+         display: block;
+         text-indent: -9999px;
+         }
+         p[data-value] { 
+         position: relative; 
+         }
+      </style> -->
+   </head>
+   <body>
+      <div class="admin">
+         <header class="admin__header">
+            <a href="#" class="logo">
+            </a>
+            <div class="toolbar">
+               <button class="btn btn--primary" style="margin-right: 5px;">Home</button>
+               <button class="btn btn--primary" style="margin-right: 5px;">About</button>
+               <button class="btn btn--primary" style="margin-right: 5px;">Messages</button>
+            </div>
+         </header>
+         <nav class="admin__nav">
+            <ul class="menu">
+               <li class="menu__item">
+                  <a class="menu__link" href="#">Dashboard</a>
+               </li>
+               <li class="menu__item">
+                  <a class="menu__link" href="#">Sales</a>
+               </li>
+               <li class="menu__item">
+                  <a class="menu__link" href="#">Campagins</a>
+               </li>
+               <li class="menu__item">
+                  <a class="menu__link" href="#">Servers</a>
+               </li>
+               <li class="menu__item">
+                  <a class="menu__link" href="#">Foobars</a>
+               </li>
+               <li class="menu__item">
+                  <a class="menu__link" href="#">Plumbuses</a>
+               </li>
+            </ul>
+         </nav>
+         <main class="admin__main">
+            <h2>Dashboard</h2>
+            <div class="dashboard">
+               <div class="dashboard__item">
+                  <div class="card" style="display: table-cell;">
+                     <div style="background: tan;
+                        padding-left: 7px;
+                        border-radius: 5px;">
+                        <p style="    margin-bottom: -37px;"> Tables</p>
+                     </div>
+                     <div>
+                        <table style="margin: 50px auto 10px auto;">
+                           <thead>
+                              <tr>
+                                 <th>Regian</th>
+                                 <th>Q1 2010</th>
+                                 <th>Q2 2010</th>
+                                 <th>Q3 2010</th>
+                                 <th>Q4 2010</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                           <tbody class="labels">
+                              <tr>
+                                 <td colspan="5">
+                                    <label for="accounting">Accounting</label>
+                                    <input type="checkbox" name="accounting" id="accounting" data-toggle="toggle">
+                                 </td>
+                              </tr>
+                           </tbody>
+                           <tbody class="hide">
+                              <tr>
+                                 <td>Australia</td>
+                                 <td>$7,685.00</td>
+                                 <td>$3,544.00</td>
+                                 <td>$5,834.00</td>
+                                 <td>$10,583.00</td>
+                              </tr>
+                              <tr>
+                                 <td>Central America</td>
+                                 <td>$7,685.00</td>
+                                 <td>$3,544.00</td>
+                                 <td>$5,834.00</td>
+                                 <td>$10,583.00</td>
+                              </tr>
+                           </tbody>
+                           <tbody class="labels">
+                              <tr>
+                                 <td colspan="5">
+                                    <label for="management">Management</label>
+                                    <input type="checkbox" name="management" id="management" data-toggle="toggle">
+                                 </td>
+                              </tr>
+                           </tbody>
+                           <tbody class="hide">
+                              <tr>
+                                 <td>Australia</td>
+                                 <td>$7,685.00</td>
+                                 <td>$3,544.00</td>
+                                 <td>$5,834.00</td>
+                                 <td>$10,583.00</td>
+                              </tr>
+                              <tr>
+                                 <td>Central America</td>
+                                 <td>$7,685.00</td>
+                                 <td>$3,544.00</td>
+                                 <td>$5,834.00</td>
+                                 <td>$10,583.00</td>
+                              </tr>
+                              <tr>
+                                 <td>Europe</td>
+                                 <td>$7,685.00</td>
+                                 <td>$3,544.00</td>
+                                 <td>$5,834.00</td>
+                                 <td>$10,583.00</td>
+                              </tr>
+                              <tr>
+                                 <td>Middle East</td>
+                                 <td>$7,685.00</td>
+                                 <td>$3,544.00</td>
+                                 <td>$5,834.00</td>
+                                 <td>$10,583.00</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div class="dashboard__item">
+                  <div class="card">
+                     <div style="background: tan;
+                        padding-left: 7px;
+                        border-radius: 5px;">
+                        <p style="    margin-bottom: -37px;"> Progress Bar</p>
+                     </div>
+                     <div style="margin: 50px auto 0;
+                     font-family: Expletus Sans, sans-serif;">
+                     <ul>
+                        <li style="
+                           list-style-type: none;
+                           ">
+                           <p style="width:80%; font-size: 25px;" data-value="80">HTML5</p>
+                           <progress max="100" value="80" class="html5">
+                              <div class="progress-bar">
+                                 <span style="width: 80%">80%</span>
+                              </div>
+                           </progress>
+                           <p style="width:60%;font-size: 25px;" data-value="60">CSS3</p>
+                           <progress max="100" value="60" class="css3">
+                              <div class="progress-bar">
+                                 <span style="width: 60%">60%</span>
+                              </div>
+                           </progress>
+                           <!-- jQuery -->
+                           <p style="width:50%;font-size: 25px;" data-value="50">jQuery</p>
+                           <progress max="100" value="50" class="jquery">
+                              <div class="progress-bar">
+                                 <span style="width: 50%">50%</span>
+                              </div>
+                           </progress>
+                           <p style="width:60%;font-size: 25px;" data-value="60">CSS3</p>
+                           <progress max="100" value="60" class="css3">
+                              <div class="progress-bar">
+                                 <span style="width: 60%">60%</span>
+                              </div>
+                           </progress>
+                           <p style="width:60%;font-size: 25px;" data-value="60">CSS3</p>
+                           <progress max="100" value="60" class="css3">
+                              <div class="progress-bar">
+                                 <span style="width: 60%">60%</span>
+                              </div>
+                           </progress>
+                           <p style="width:60%;font-size: 25px;" data-value="60">CSS3</p>
+                           <progress max="100" value="60" class="css3">
+                              <div class="progress-bar">
+                                 <span style="width: 60%">60%</span>
+                              </div>
+                           </progress>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="dashboard__item">
+               <div class="card">
+                  <div style="background: tan;
+                     padding-left: 7px;
+                     border-radius: 5px;">
+                     <p style="    margin-bottom: -37px;"> Info</p>
+                  </div>
+                  <div>
+                     <img src="images/beach_cloud_dawn_horizon_horizontal_landscape_ocean_601821.jpeg" width="auto" height="200px" style="margin-top: 40px;">
+                     <p class="product_descrip" style="font-size: 20px;margin-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed commodo arcu. Phasellus ut porta turpis. Etiam eu nisl et lectus egestas hendrerit sit amet at arcu. Curabitur justo velit, pulvinar eget libero vitae, finibus maximus nibh. Quisque bibendum suscipit justo a auctor. Curabitur sed erat sapien.</p>
+                     <input type="button" value="Read More" style="width: 200px;
+                        padding: 5px;
+                        border-radius: 5px;
+                        height: 40px;
+                        font-family: 'Quicksand';
+                        background: darkblue;
+                        color: white;
+                        font-size: 17px;
+                        margin-bottom: 10px;
+                        margin-top: 10px;
+                        border: none;">
+                  </div>
+               </div>
+            </div>
+            <div class="dashboard__item">
+               <div class="card">
+                  <div style="background: tan;
+                     padding-left: 7px;
+                     border-radius: 5px;">
+                     <p style="    margin-bottom: -37px;">Forms</p>
+                  </div>
+                  <div>
+                     <div class="contact" style="margin-top: 50px;">
+                        <input type="text" class="text" placeholder="Name" style="    margin-bottom: 10px;
+                           padding-left: 5px;
+                           height: 30px;
+                           width: 100%;
+                           font-size: 15px;
+                           border-radius: 5px;"><br>
+                        <input type="text" class="text" placeholder="Email" style="    margin-bottom: 10px;
+                           padding-left: 5px;
+                           height: 30px;
+                           width: 100%;
+                           font-size: 15px;
+                           border-radius: 5px;"><br>
+                     </div>
+                     <div>
+                        <input type="text" class="text" placeholder="XXXX-XXXX-XXXX-XXXX" style="    margin-bottom: 10px;
+                           padding-left: 5px;
+                           height: 30px;
+                           width: 100%;
+                           font-size: 15px;
+                           border-radius: 5px;"><br>
+                        <input type="text" class="text" placeholder="MMM" style="    margin-bottom: 10px;
+                           padding-left: 5px;
+                           height: 30px;
+                           width: 100%;
+                           font-size: 15px;
+                           border-radius: 5px;"><br>
+                        <input type="text" class="text" style="    margin-bottom: 10px;
+                           padding-left: 5px;
+                           height: 30px;
+                           width: 100%;
+                           font-size: 15px;
+                           border-radius: 5px;" placeholder="YYYY"><br>
+                        <input type="text" class="text" placeholder="XXXX-XXXX-XXXX-XXXX" style="    margin-bottom: 10px;
+                           padding-left: 5px;
+                           height: 30px;
+                           width: 100%;
+                           font-size: 15px;
+                           border-radius: 5px;"><br>
+                        <input type="text" class="text" placeholder="XXXX-XXXX-XXXX-XXXX" style="    margin-bottom: 10px;
+                           padding-left: 5px;
+                           height: 30px;
+                           width: 100%;
+                           font-size: 15px;
+                           border-radius: 5px;"><br>
+                        <input type="text" class="text" placeholder="XXXX-XXXX-XXXX-XXXX" style="    margin-bottom: 10px;
+                           padding-left: 5px;
+                           height: 30px;
+                           width: 100%;
+                           font-size: 15px;
+                           border-radius: 5px;"><br>
+                     </div>
+                     <input type="button" value="Submit" style="width: 200px;
+                        padding: 5px;
+                        border-radius: 5px;
+                        height: 40px;
+                        font-family: 'Quicksand';
+                        background: darkblue;
+                        color: white;
+                        font-size: 17px;
+                        margin-bottom: 10px;
+                        border: none;">
+                  </div>
+               </div>
+            </div>
+            <div class="dashboard__item">
+               <div class="card">
+                  <div style="background: tan;
+                     padding-left: 7px;
+                     border-radius: 5px;">
+                     <p style="    margin-bottom: -37px;">Profile</p>
+                  </div>
+                  <div><img src="images/22-223941_transparent-avatar-png-male-avatar-icon-transparent-png.png" alt="Avatar" style="width:150px; border-radius: 50%;margin-left: 35%;margin-top: 60px;"></div>
+                  <div>
+                     <p style="margin-left: 35%;">Rohit Arora</p>
+                     <br>
+                     <p style="font-size: 20px;padding: 10px;margin-left: 25px; margin-top: -40px;margin-bottom: -30px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed commodo arcu. Phasellus ut porta turpis.</p>
+                     <br>
+                  </div>
+               </div>
+            </div>
+            <div class="dashboard__item" >
+               <div class="card" style="background: #103283;" >
+                  <div style="background: tan;
+                     padding-left: 7px;
+                     border-radius: 5px;">
+                     <p style="    margin-bottom: -37px;">Login Screen</p>
+                  </div>
+                  <div style="margin: 70px auto 30px auto; background: #4472E0;width: 400px; padding: 15px;border-radius: 10px;">
+                     <p style="margin-bottom: 8px;color: #ffffff;"><b>Sign In To your Account</b></p>
+                     <input type="text" class="text" placeholder="Username" style="    margin-bottom: 10px;
+                        padding-left: 5px;
+                        height: 30px;
+                        width: 100%;
+                        font-size: 15px;
+                        border-radius: 5px;"><br>
+                     <input type="password" class="text" placeholder="Password" style="    margin-bottom: 10px;
+                        padding-left: 5px;
+                        height: 30px;
+                        width: 100%;
+                        font-size: 15px;
+                        border-radius: 5px;"><br>
+                     <input type="button" value="Login" style="width: 150px;
+                        padding: 5px;
+                        border-radius: 5px;
+                        height: 40px;
+                        font-family: 'Quicksand';
+                        background: darkblue;
+                        color: white;
+                        font-size: 17px;
+                        margin: 0px auto 10px auto;
+                        border: none;">
+                     <p style="font-size: 14px;color: #ffffff;">Forgot Password?</p>
+                  </div>
+               </div>
+            </div>
+            <div class="dashboard__item">
+               <div class="card">
+                  <div style="background: tan;
+                     padding-left: 7px;
+                     border-radius: 5px;">
+                     <p style="    margin-bottom: -37px;">Calender</p>
+                  </div>
+                  <div style="background: #831060;margin-top: 40px; border-radius: 10px;">
+                     <div style="background: #BE3C96;display: flex;font-size: 20px;padding: 5px;color: #ffffff;border-radius: 10px 10px 0px 0px;">
+                        <p style="margin-left: 40%;">Wednesday</p>
+                        <br>
+                     </div>
+                     <div>
+                        <p style="margin-left: 50px; margin-top: 20px;">
+                           <span style="color: #C5C4C5;font-size: 50px;margin-right: 5px;">23</span><span style="color: #C5C4C5;font-size: 50px;margin-right: 5px;">24</span><span style="color: #C5C4C5;font-size: 50px;margin-right: 5px;">25</span><span style="color: #ffffff;font-size: 70px;margin-right: 5px;">26</span><span style="color: #C5C4C5;font-size: 50px;margin-right: 5px;">27</span><span style="color: #C5C4C5;font-size: 50px;margin-right: 5px;">28</span><span style="color: #C5C4C5;font-size: 50px;margin-right: 5px;">29</span>
+                        </p>
+                        <br>
+                     </div>
+                     <div><input type="button" value="Add Event" style="width: 150px;
+                        padding: 5px;
+                        border-radius: 5px;
+                        height: 40px;
+                        font-family: 'Quicksand';
+                        background: #835BFC;
+                        color: white;
+                        font-size: 17px;
+                        margin: -20px auto 15px 35%;
+                        border: none;">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="dashboard__item">
+               <div class="card">
+                  <div style="background: tan;
+                     padding-left: 7px;
+                     border-radius: 5px;">
+                     <p style="    margin-bottom: -37px;">Latest News</p>
+                  </div>
+                  <div style="background: #831060;margin-top: 40px; border-radius: 10px;">
+                     <div style="background: #BE3C96;display: flex;font-size: 20px;padding: 5px;color: #ffffff;border-radius: 10px 10px 0px 0px;">
+                        <p style="margin-left: 40%;">Latset News</p>
+                        <br>
+                     </div>
+                     <div>
+                        <p style="color: #ffffff; font-size: 15px;padding: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed commodo arcu. Phasellus ut porta turpis. Etiam eu nisl et lectus egestas hendrerit sit amet at arcu.</p>
+                        <br>
+                        <p style="font-size: 14px; color: #CACACA; margin-top: -50px;padding: 10px;">3 mins ago</p>
+                     </div>
+                     <div>
+                        <p style="color: #ffffff; font-size: 15px;padding: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed commodo arcu. </p>
+                        <br>
+                        <p style="font-size: 14px; color: #CACACA; margin-top: -50px;padding: 10px;">8 mins ago</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </main>
+         <footer class="admin__footer">
+            <ul class="ticker">
+               <li class="ticker__item">Terms & Conditions</li>
+               <li class="ticker__item">About</li>
+               <li class="ticker__item">Contact Us</li>
+               <li class="ticker__item">Locations</li>
+            </ul>
+         </footer>
+      </div>
+      <script></script>
+   </body>
+</html>

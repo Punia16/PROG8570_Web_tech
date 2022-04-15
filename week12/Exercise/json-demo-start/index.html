@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JSON DEMO</title>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <style>
    .wrapper {
     display: flex;
@@ -27,11 +26,6 @@
   </div>
 
   <div class="wrapper">
-    <p>Weight:</p>
-    <p class="weight"></p>
-   </div>
-
-  <div class="wrapper">
    <p>Team:</p>
    <p class="team"></p>
   </div>
@@ -47,29 +41,5 @@
   </div>
 
  </body>
- <script>
-     $(document).ready(function(){
-         $.getJSON('./player-data.json',playerData)
-     })
-
-     let name = document.querySelector('.name')
-     let height = document.querySelector('.height')
-     let weight = document.querySelector('.weight')
-     let team = document.querySelector('.team')
-     let pts = document.querySelector('.pts')
-     let rbs = document.querySelector('.rbs')
-
-     function playerData(data){
-         for(const property in data){
-            name.innerHTML = data.name
-            height.innerHTML = data.height
-            weight.innerHTML = data.weight
-            team.innerHTML = data.team
-            pts.innerHTML = data.pts
-            rbs.innerHTML = data.rbs
-         }
-     }
-       
- </script>
 
 </html>

@@ -1,0 +1,326 @@
+:root {
+	--link-color:#f7e7d9;
+	--maroon:  #890417;
+	--light: #ddd;
+	--body-font-style: "monospace", "Gill Sans", sans-serif;
+	--thumnail-maroon: #ac5757;
+	--blue-light: #ced4da;
+	--white: white;
+
+
+}
+
+body {
+	font-family: var(--body-font-style);
+}
+
+header {
+	text-align: center;
+	position: relative;
+	height: 200px;
+	background: url(../images/Travel_cover.jpg) rgba(0, 0, 0, 0.5);
+	background-blend-mode: multiply ;
+	background-size: contain;
+	border: 20px solid #010101;
+}
+
+header h1.actortext {
+	color: transparent;
+	font-size: 5rem;
+	position: absolute; 
+    inset: 0;
+    padding: 20px;
+    color: #fbeeef; 
+    font-family: sans-serif; 
+    font-weight: bold; 
+}
+h3 {
+	position: absolute;
+	color: transparent;
+	font-size: 3rem;
+	color: #fbeeef; 
+	inset: 19rem;
+	bottom: 1rem;
+	margin-bottom: 0;
+	
+} 
+
+nav {
+	background-color: var(--maroon);
+	color: #8f8b8c;
+}
+nav a {
+	padding: 1.5rem 2rem;
+	display: inline-block;
+	color: rgb(219, 218, 218);
+}
+nav > ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	justify-content: space-around;
+}
+nav ul li {
+	list-style-type: none;
+
+}
+/* testing */
+ul > li > a:hover {
+	text-decoration: underline;
+	color: var(--maroon);
+   }
+
+nav a:hover,
+nav a.active,
+.nested-link li:hover {
+	color: white;
+	background-color: var(--link-color);
+}
+.link {
+	position: relative;
+}
+.link .nested-link {
+	position: absolute;
+	padding: 0;
+	display: none;
+	background-color: var(--maroon);
+}
+.nested-link a {
+	padding-right: 5rem;
+}
+.link:hover .nested-link {
+	display: block;
+}
+
+main {
+	display: flex;
+	justify-content: space-between;
+	background-color: #f1f3f5;
+	
+}
+.main-middle {
+	padding: 2rem;
+}
+.tagline{
+    margin-bottom: 1.5em;
+    border-style: outset;
+}
+
+figcaption{
+	text-align: center;
+}
+h2{
+	font-family: 'Linux, Libertine','Gerogia','Times',serif;
+	line-height: 1.3;
+	margin-bottom: 0.25em;
+}
+
+aside {
+	padding: 1rem;
+}
+aside ul {
+	display: flex;
+	flex-direction: column;
+}
+aside a {
+	color: white;
+	display: inline-block;
+	padding: 1rem 1rem;
+	border-radius: 10px;
+}
+aside > ul > li {
+	padding: 0.1rem;
+	border: 10px solid white;
+	margin-bottom: 2rem;
+	text-align: center;
+	border-radius: 50px;
+}
+
+aside li:hover,
+aside li.active,
+aside li.active a,
+aside li:hover a,
+aside li:hover a:hover {
+
+	color: var(--thumnail-maroon);
+	border-color: var(--thumnail-maroon);
+
+}
+
+.trip-para{
+	text-align: center;
+	font-size: 1.5rem;
+}
+.home-thumbnail {
+	/* opacity: 0.5; */
+	background: url(../images/blamk.jpg) rgba(102, 50, 50, 0.5);
+	background-blend-mode: multiply;
+	background-size: cover;
+}
+.home-thumbnail:hover{
+	opacity: 0.5;
+	text-decoration: underline;
+}
+.merchant-thumbnail {
+	background: url(../images/blamk.jpg) rgba(0, 0, 0, 0.5);
+	background-blend-mode: hard-light;
+	background-size: contain;
+	
+}
+.merchant-thumbnail:hover{
+	opacity: 0.5;
+	text-decoration: underline;
+}
+.table-thumbnail {
+	background: url(../images/blamk.jpg) rgba(0, 0, 0, 0.5);
+	background-blend-mode: multiply;
+	background-size: cover;
+}
+.table-thumbnail:hover{
+	opacity: 0.5;
+	text-decoration: underline;
+}
+.datatable-thumbnail {
+	background: url(../images/blamk.jpg) rgba(0, 0, 0, 0.5);
+	background-blend-mode: multiply;
+	background-size: cover;
+}
+.datatable-thumbnail:hover{
+	opacity: 0.5;
+	text-decoration: underline;
+}
+.main-right table {
+	border-style: ridge;
+	
+	margin-bottom: 2rem;
+}
+.main-right table tr {
+	line-height: 1.5rem;
+}
+.main-right {
+	padding: 1rem 2rem;
+}
+.main-right > p {
+	border-radius: 4px;
+	padding: 1rem 0;
+	text-align: center;
+	background-color: var(--thumnail-maroon);
+	font-weight: 700;
+	margin-bottom: 1rem;
+	
+}
+
+.table_image{
+	width: 100%;
+}
+.main-right table td p {
+	color: rgb(2, 2, 2);
+	white-space: nowrap;
+}
+.main-right table .col-id {
+	color: #010101;
+	font-weight: 600;
+	white-space: nowrap;
+	padding-right: 2rem;
+	vertical-align: top;
+}
+
+figure {
+	margin: 1rem 0;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+article p {
+	margin-bottom: 1rem;
+}
+article figure img {
+	width: 100%;
+}
+dd {
+	margin-top: 1.5rem;
+}
+dt {
+	font-weight: 560;
+}
+
+footer {
+	background-color: var(--maroon);
+	color: white;
+	padding: 1.5rem;
+	text-align: center;
+	
+}
+footer a {
+	color: var(--link-color);
+}
+
+/* responsive code */
+@media screen and (max-width: 768px) {
+	header h1 {
+		font-size: 2rem;
+	}
+	header h2 {
+		font-size: 1.5rem;
+	}
+	main {
+		flex-direction: column;
+	}
+	nav {
+		flex-wrap: wrap;
+	}
+}
+
+/* Trips section style */
+.photos{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.photos .clip {
+    float: left;
+    width: 30%;
+    margin: 20px 1.5%;  
+    position: relative; 
+}
+.photos .text {
+	width: 90%;
+	height: 20%;
+	padding: 10px;
+	border: 5px solid gray;
+	margin: 0;
+  }
+
+.photos img {
+	display: block;  
+}
+
+.photos figcaption {
+	color: white;
+	font-family: sans-serif;
+	font-size: 16px;
+	padding: 1% 2%;
+	text-align: center;
+	position: relative; 
+	bottom: 0; 
+	background-color: rgba(128, 5, 5, 0.67);
+	width: 96%;
+}
+/* Datatable style */
+.table-body{
+	max-width: 600px; 
+	margin:auto;
+	border: 2px solid black;
+	box-shadow: 0 0 10px grey;
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* Dashboard */
+.dashboard{
+	width: 90%;
+	height: 20px;
+	padding: 8px;
+	margin: 10px 10px 20px -5px;
+	box-shadow: 0 0 10px grey;
+	border: 5px solid var(--maroon);
+	/* margin: 10px; */
+	border-radius: 10%;	
+	text-align: center;
+}

@@ -1,0 +1,99 @@
+<!-- 	
+	Note: This example will only work if using a local server 
+	like XAMPP or node.js. Alternatively, the easy way is 
+	to use Live Server extension with VS Code:
+	https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+
+	If not using a local server, this will not work due to 
+	Cross-origin blocking of the json data file by the browser.
+-->
+<!-- 
+    In this web page, we will fetch data from a local file
+	and create a chart on the page.
+ -->
+<!DOCTYPE html>
+<html lang="en-CA">
+	<meta charset="UTF-8">
+
+	<head>
+		<title>Using Charts</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<style type="text/css">
+			body,
+			button {
+				font-size: 16px;
+				font-family: sans-serif;
+			}
+
+			p {
+				padding: 20px;
+				font-size: 20px;
+				line-height: 24px;
+				font-family: sans-serif;
+			}
+
+			.wrapper {
+				max-width: 600px;
+				text-align: center;
+				margin: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<canvas id="myChart"></canvas>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				// get the JSON data from weather_data.json file and call the function generateWeatherChart
+				$.getJSON("weather_data.json", generateWeatherChart); 
+				
+			});
+			function generateWeatherChart(myJson) {
+				// declaring empty arrays to store labels and data for the chart
+				var myLabels = new Array();
+				var myData = new Array();
+				for (i in myJson.weather) { // loop through the JSON data received
+					x = myJson.weather[i];
+					myLabels.push(x.day); // add the date to label array
+					myData.push(x.temperature); // add the temperature to the data array
+				}
+				var ctx = document.getElementById('myChart').getContext('2d');
+				var chart = new Chart(ctx, {
+					// creating a bar chart
+					type: 'bar', 
+					data: {
+						labels: myLabels,
+						datasets: [
+							{
+								label: "Temperture",
+								fill: false,
+								backgroundColor: 'rgb(255, 99, 132)',
+								borderColor: 'rgb(255, 99, 132)',
+								data: myData,
+							}
+						]
+					},
+					options: {
+                            // responsive: true,
+                                    plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Chart with Tick Configuration'
+                                    }
+                                    },
+                                scales: {
+                                    y: {
+                                        title: {
+                                        display: true,
+                                        text: 'Tourist arrival in million'
+                                        }
+                                    }
+                                }
+                         }
+				});
+			}
+		</script>
+	</body>

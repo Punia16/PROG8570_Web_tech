@@ -1,0 +1,44 @@
+{
+    "squadName" : "Super Hero Squad",
+    "homeTown" : "Hero City",
+    "formed" : 2021,
+    "secretBase" : "CN tower",
+    "active" : true,
+    "members" : [
+      {
+        "country" : "Asia & Pacific",
+        "Year1950" : "200,000.00",
+        "Year2020" : "343.00 million",
+        "absoluteChange" : "+342.80 million",
+        "relativeChange" : "+171,400%"
+      },
+      {
+        "country" : "Middle East",
+        "Year1950" : "200,000.00",
+        "Year2020" : "64.00 million",
+        "absoluteChange" : "+63.80 million",
+        "relativeChange" : "+31,900%"
+      },
+      {
+        "country" : "Africa",
+        "Year1950" : "500,000.00",
+        "Year2020" : "67.00 million",
+        "absoluteChange" : "+66.50 million",
+        "relativeChange" : "+13,300%"
+      },
+      {
+        "country" : "Europe",
+        "Year1950" : "16.80 million",
+        "Year2020" : "713.00 million",
+        "absoluteChange" : "+696.20 million",
+        "relativeChange" : "+4,144%"
+      },
+      {
+        "country" : "Americas",
+        "Year1950" : "7.50 million",
+        "Year2020" : "217.00 million",
+        "absoluteChange" : "+209.50 million",
+        "relativeChange" : "+2,793%"
+      }
+    ]
+  }

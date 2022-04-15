@@ -1,0 +1,314 @@
+<!-- Parwinder Singh  8798669 -->
+<!-- Rohit Arora 8786754 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="icon" href="./images/logo.jpg">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/merch.css">
+    <link rel="stylesheet" href="css/table.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		
+</head>
+
+<body>
+    <header>
+        <h1 class="actortext">WANDERLUST</h1>
+    </header>
+
+    <!-- Menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li> <a href="merch.html">DATA</a></li>
+            <li><a href="table.html">TABLE</a></li>
+        </ul>
+    </nav>
+
+    <!-- Side bar && main section -->
+    <main>
+        <aside>
+            <div class="dashboard">DASHBOARD</div>
+            <ul>
+                <li class="home-thumbnail"><a href="index.html" active>HOME</a>
+                </li>
+                <li class="merchant-thumbnail active">
+                    <a href="merch.html">DATA</a>
+                </li>
+                <li class="table-thumbnail">
+                    <a href="table.html">TABLE</a>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="section-middle">
+            <h2 class="chart-heading">International arrivals by world region</h2>
+            <h2>Arrivals by world region</h2>
+            <p>This visualization shows how tourist arrivals have increased since shortly after the Second World War in 1950.
+
+                The United Nations World Tourism Organization (UNWTO) estimates that internationally there were just 25 million tourist arrivals in 1950. 68 years later this number has increased to 1.4 billion international arrivals per year. This is a 56-fold increase.</p>
+            <br>
+            <!-- Bar chart -->
+            <div class="div-container">
+               <div class="barChart">
+                   <p>Bar Chart -</p>
+               </div>
+            <div class="wrapper">
+			    <canvas id="myChart"></canvas>
+		    </div>
+            </div>
+
+            <!-- Line chart -->
+            <div class="div-container">
+                <div class="flowChart">
+                    <p>Line Chart -</p>
+                </div>
+             <div class="wrapper">
+                 <canvas id="myflowChart"></canvas>
+             </div>
+             </div>
+
+            <!-- Table -->
+            <div class="div-container">
+                <div class="tableShow">
+                    <p>Searchable/Sortable Table -</p>
+                </div>
+                <div class="table-body">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Country</th>
+                                <th>1950</th>
+                                <th>2020</th>
+                                <th>Absolute Change</th>
+                                <th>Relative Change</th>
+                            </tr>
+                        </thead>
+                        <tbody id="superHeroInfo">
+                        </tbody>
+                    </table>
+                
+                </div>
+            </div>
+		    <script type="text/javascript">
+			    $(document).ready(function () {
+				// get the JSON data from tourists_data.json file and call the function touristChart
+				$.getJSON("tourists_data.json", touristChart); 
+				
+			    });
+			    function touristChart(myJson) {
+				// declaring empty arrays to store information for the chart
+				var years = new Array();
+				var touristStrength = new Array();
+                
+                var yaxes = {
+                                200 : '200 million',
+								400 : '400 million',
+								600 : '600 million',
+                                800 : '800 million',
+								1000 : '1 billion',
+								1200 : '1.2 billion',
+                                1400: '1.4 billion'
+								
+							}
+                // to get data from JSON file
+				for (i in myJson.tourist) {
+					x = myJson.tourist[i];
+                    // Adding JSON file data to array variables
+					years.push(x.year); 
+					touristStrength.push(x.noOfTourists);
+                    
+				}
+
+                // Setup block
+			    const data = {
+                    labels: years,
+						datasets: [
+							    {
+								label: "International tourist arrivals per year (in millions) by region",
+								fill: false,
+								backgroundColor: 'rgb(137, 4, 23)',
+								borderColor: 'rgb(137, 4, 23)',
+								data: touristStrength,
+							    }
+						    ]
+                };
+
+                // config block
+                const config = {
+                    type: 'bar', 
+					data,
+                        options: {
+                            // responsive: true,
+                                    plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Bar chart representation of International tourists in years'
+                                    }
+                                    },
+                                scales: {
+                                    y: {
+                                        // title: {
+                                        // display: true,
+                                        // text: 'Tourist arrival in million'
+                                        // },
+                                        ticks: {
+												beginAtZero: true,
+												callback: function(value, index, values) {
+													return yaxes[value];
+												}
+											}
+                                    }
+                                }
+                         }
+                };
+
+                // init block
+                const mychart = new Chart(
+				document.getElementById('myChart'),
+				config
+			);
+			    }
+                </script>
+
+                <!-- Line chart javascript -->
+
+                <script>
+                    $(document).ready(function () {
+                    // get the JSON data from tourists_data.json file and call the function arrivalChart
+                    $.getJSON("arrivals-data.json", arrivalChart); 
+                    
+                    });
+                    function arrivalChart(myJson) {
+                    // declaring empty arrays to store information from JSON for line chart
+                    var years = new Array();
+                    var china = new Array();
+                    var france = new Array();
+                    var yaxes = {
+                                    50 : '50 million',
+                                    100 : '100 million',
+                                    150 : '150 million',
+                                    200 : '200 million'
+                                    
+                                }
+                    // to get data from JSON file
+                    for (i in myJson.arrival) {
+                        x = myJson.arrival[i];
+                        // Adding JSON file data to array variables
+                        years.push(x.year); 
+                        china.push(x.china); 
+                        france.push(x.france);
+                    }
+    
+                    // Setup block
+                    const data = {
+                        labels: years,
+                            datasets: [
+                                    {
+                                    label: "China",
+                                    fill: false,
+                                    backgroundColor: 'rgb(137, 4, 23)',
+                                    borderColor: 'rgb(137, 4, 23)',
+                                    data: china,
+                                    },
+                                    {
+                                    label: "France",
+                                    fill: false,
+                                    backgroundColor: 'rgb(22, 68, 8)',
+                                    borderColor: 'rgb(22, 68, 8)',
+                                    data: france,
+                                    }
+                                    
+                                ]
+                    };
+    
+                    // config block
+                    const config = {
+                        type: 'line', 
+                        data,
+                            options: {
+                                // responsive: true,
+                                        plugins: {
+                                        title: {
+                                            display: true,
+                                            text: 'Line chart of International arrivals by country'
+                                        }
+                                        },
+                                    scales: {
+                                        y: {
+                                            // title: {
+                                            // display: true,
+                                            // text: 'Tourist arrival in million'
+                                            // },
+                                            ticks: {
+                                                    beginAtZero: true,
+                                                    callback: function(value, index, values) {
+                                                        return yaxes[value];
+                                                    }
+                                                }
+                                        }
+                                    }
+                             }
+                    };
+    
+                    // init block
+                    const mychart = new Chart(
+                    document.getElementById('myflowChart'),
+                    config
+                );
+                    }
+                    </script>
+    
+                 <!-- Showing searchable and sorting Table -->
+
+                <script >
+                function loadData(location) {
+                   $.getJSON("sample.json", displayTable); 
+                }
+                function displayTable(jsonResponse){
+                    let touristTable = '';
+                
+                    // looping through the members data
+                    for(member of jsonResponse.members){ 
+                            touristTable += `
+                            <tr>
+                                <td>${member.country}</td>
+                                <td>${member.Year1950}</td>
+                                <td>${member.Year2020}</td>
+                                <td>${member.absoluteChange}</td>
+                                <td>${member.relativeChange}</td>
+                                
+                            </tr>
+                        `;
+                    }
+                    // writing the table data in the table body
+                    document.getElementById('superHeroInfo').innerHTML = touristTable;
+                    // adding jQuery DataTable functionality for searching, sorting within the table
+                    $('#dataTable').DataTable();
+                }
+                
+                loadData();
+		    </script>
+    
+        </section>
+    </main>
+
+    <footer>
+        <p> Parwinder Singh    &copy;  psingh8669@conestogac.on.ca</p>
+        <p> Rohit Arora    &copy;  rarora6754@conestogac.on.ca</p>
+    </footer>
+</body>
+
+</html>
